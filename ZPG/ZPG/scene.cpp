@@ -42,9 +42,11 @@ void Scene::addSubjectToShader(Subject* subject, ShaderProgram* shader)
 
 void Scene::renderScene()
 {
+	
 	for (auto light :lights) {
 		light->circle();
 	}
+	
 	for (auto i : objects) {
 		i->updateDynamicTransformations();
 		i->drawObject();

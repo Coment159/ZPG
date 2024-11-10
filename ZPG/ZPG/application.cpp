@@ -363,6 +363,7 @@ void Application::window_size_callback(GLFWwindow* window, int width, int height
 	Application* app = static_cast<Application*>(glfwGetWindowUserPointer(window));
 	app->camera->projectMatrix = glm::perspective(glm::radians(70.f), ration, 0.1f, 100.f);
 	glViewport(0, 0, width, height);
+	app->camera->notifyAll();
 }
 
 
