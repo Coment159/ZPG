@@ -1,0 +1,57 @@
+﻿  application.cpp
+  camera.cpp
+  drawableObject.cpp
+  drawableObject.h
+  Light.cpp
+  main.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\shaderClass.h(5,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  model.cpp
+  (kompilování zdrojového souboru application.cpp)
+  
+H:\ZPGgit\ZPG\ZPG\ZPG\camera.h(3,10): error C1083: Nejde otevřít soubor zahrnout: glm/vec3.hpp: No such file or directory
+  (kompilování zdrojového souboru camera.cpp)
+  
+H:\ZPGgit\ZPG\ZPG\ZPG\VBO.h(5,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru drawableObject.cpp)
+  
+H:\ZPGgit\ZPG\ZPG\ZPG\VBO.h(5,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru drawableObject.h)
+  
+H:\ZPGgit\ZPG\ZPG\ZPG\Light.h(2,10): error C1083: Nejde otevřít soubor zahrnout: glm/vec3.hpp: No such file or directory
+  (kompilování zdrojového souboru Light.cpp)
+  
+H:\ZPGgit\ZPG\ZPG\ZPG\shaderClass.h(5,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru main.cpp)
+  
+H:\ZPGgit\ZPG\ZPG\ZPG\VBO.h(5,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru model.cpp)
+  
+  Observer.cpp
+  scene.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\ShaderLoader.h(3,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru scene.cpp)
+  
+  second.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\second.cpp(2,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  ShaderLoader.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\ShaderLoader.h(3,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru ShaderLoader.cpp)
+  
+  shaderProgram.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\ShaderLoader.h(3,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru shaderProgram.cpp)
+  
+  shaderProgram.h
+H:\ZPGgit\ZPG\ZPG\ZPG\ShaderLoader.h(3,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru shaderProgram.h)
+  
+  Subject.cpp
+  VAO.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\VBO.h(5,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru VAO.cpp)
+  
+  VBO.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\VBO.h(5,10): error C1083: Nejde otevřít soubor zahrnout: GL/glew.h: No such file or directory
+  (kompilování zdrojového souboru VBO.cpp)
+  
+  Generování kódu...
