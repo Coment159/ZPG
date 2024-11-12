@@ -6,3 +6,8 @@
 *.dylib
 
 .sv/
+*.vsidx
+*.ipch
+*.tlog
+*.tlog
+*.tlog
