@@ -1,1 +1,8 @@
+*.o
+*.obj
+*.exe
+*.out
+*.so
+*.dylib
 
+.sv/
