@@ -72,17 +72,20 @@ void Application::initialize()
 	Scene* scene2 = scene.at(1);
 	scene2->cam = camera;
 	scene2->addSubjectToShader(dynamic_cast<Subject*>(scene2->cam));
-	scene2->light->lightPosition = glm::vec3(0, 1, 0);
-	scene2->lights.push_back(new Light());
+	scene2->light->lightPosition = glm::vec3(0, 5, 0);
+	scene2->lights.push_back(new Light(2.0f,0,0.01f));
 	scene2->lights.at(1)->lightPosition = glm::vec3(0,1,2);
 	scene2->lights.at(1)->speed *= 2;
 
+	scene2->lights.push_back(new LightAttached(camera,30.f));
+
 	//3rd scene
-	scene.push_back(new Scene("default.vert.txt", "phong.frag.txt"));
+	scene.push_back(new Scene("default.vert.txt", "phongForest.frag.txt"));
 	Scene* scene3 = scene.at(2);
 	scene3->cam = camera;
 	scene3->addSubjectToShader(dynamic_cast<Subject*>(scene3->cam));
-	scene3->light = new Light(0, 0, 0);
+	scene3->light = new Light();
+	scene3->lights.push_back(new LightAttached(camera, 30.f));
 
 
 	//4rd scene
@@ -219,7 +222,7 @@ void Application::createForest()
 {
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->light));
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(1)));
-
+	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(2)));
 	
 	auto obj = activeScene->addObject(tree, treeSize);
 	
@@ -244,10 +247,16 @@ void Application::createForest()
 		randomObject->addTranslation(randomX, 0, i*0.1f);
 		randomObject->addRotation(randomAngle, 0, 1, 0);
 	}
+
 	obj->addScaling(0.25f);
 
+	int random = rand() % 100;
 	for (auto& o : activeScene->objects) {
-		o->addDynamicRotation(0.01f, 0, 1, 0);
+		if (random < 25)
+		{
+			o->addDynamicRotation(0.01f, 0, 1, 0);
+		}
+		random = rand() % 100;
 	}
 
 	auto floor = activeScene->addObject(plain, plainSize);
@@ -257,8 +266,9 @@ void Application::createForest()
 
 void Application::create3rdScene()
 {
-	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->light));
-	activeScene->light->lightPosition = glm::vec3(0,0,0);
+	//activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->light));
+	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(1)));
+	//activeScene->light->lightPosition = glm::vec3(0,0,0);
 
 	auto obj = activeScene->addObject(sphere, sphereSize);
 

@@ -56,7 +56,7 @@ private:
 	//Transformation data
 	Model* model;
 	ShaderProgram* shaderProgram;
-	std::vector<std::unique_ptr<Transformation>> transformations;
+	std::vector<std::unique_ptr<BasicTransform>> transformations;
 
 	glm::mat4 getModelMatrix() const {
 		glm::mat4 modelMatrix = glm::mat4(1.0f);

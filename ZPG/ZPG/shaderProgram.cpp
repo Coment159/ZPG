@@ -28,27 +28,7 @@ ShaderProgram::ShaderProgram(const char* vertFile, const char* fragFile)
 	lightsColorID = glGetUniformLocation(shaderProgramID, "lights[0].color");
 
 	glUniform1i(numberOfLightsLID, 0);
-	/*
-	lightPositionId = glGetUniformLocation(this->shaderProgramID, "lightPosition");
-	if (lightPositionId != -1 )
-	{
-		glUniform3f(lightPositionId, 5, 5, 5.0);
-	}
-	*/
-	/*
-	ambientId = glGetUniformLocation(this->shaderProgramID, "ambient");
-	if (ambientId != -1)
-	{
-		glUniform3f(ambientId, 0.1, 0.1, 0.1);
-	}
-	*/
-	/*
-	GLuint lightColorId = glGetUniformLocation(this->shaderProgramID, "lightColor");
-	if (lightColorId != -1)
-	{
-		glUniform3f(lightColorId, 1.0, 1.0, 1.0);
-	}
-	*/
+
 }
 
 ShaderProgram::~ShaderProgram()
@@ -89,10 +69,16 @@ void ShaderProgram::updateLight(Light* light)
 	glUniform3fv(id, 1, glm::value_ptr(light->getPosition()));
 	id = glGetUniformLocation(shaderProgramID, ("lights[" + std::to_string(index) + "].color").c_str());
 	glUniform3fv(id, 1, glm::value_ptr(light->lightColor));
+	id = glGetUniformLocation(shaderProgramID, ("lights[" + std::to_string(index) + "].type").c_str());
+	glUniform3fv(id, 1, glm::value_ptr(light->getType()));
+	id = glGetUniformLocation(shaderProgramID, ("lights[" + std::to_string(index) + "].lightDirection").c_str());
+	glUniform3fv(id, 1, glm::value_ptr(light->lightDirection));
+	id = glGetUniformLocation(shaderProgramID, ("lights[" + std::to_string(index) + "].cutOff").c_str());
+	glUniform1f(id, glm::cos(glm::radians(light->cutOff)));
 
+	std::cout << light->cutOff << std::endl;
 
-	//setVec3("lightPosition", light->lightPosition);
-	//setVec3("lightColor", light->lightColor);
+	
 }
 
 void ShaderProgram::notify(Subject* sub) 

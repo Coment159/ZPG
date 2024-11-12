@@ -8,6 +8,7 @@ public:
     // Attach an observer
     void attach(Observer* observer) {
         observers.push_back(observer);
+        observer->notify(this);
     }
 
     // Detach an observer

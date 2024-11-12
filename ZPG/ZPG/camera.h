@@ -8,8 +8,10 @@
 
 #include <vector>
 
+#include "IHasPosition.h"
+#include "IHasFront.h"
 #include "Subject.h"
-class Camera : public Subject
+class Camera : public Subject, public IHasPosition, public IHasFront
 {
 public:
 	Camera();
@@ -18,8 +20,6 @@ public:
 	void translate(glm::vec3 direction);
 	glm::mat4 viewMatrix;
 	glm::mat4 projectMatrix;	
-	glm::vec3 position;
-	glm::vec3 front;
 	glm::vec3 right;
 	glm::vec3 up;
 	glm::vec3 worldUp;

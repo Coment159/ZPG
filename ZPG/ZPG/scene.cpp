@@ -43,8 +43,12 @@ void Scene::addSubjectToShader(Subject* subject, ShaderProgram* shader)
 void Scene::renderScene()
 {
 	
-	for (auto light :lights) {
-		light->circle();
+	for (auto& light :lights) {
+		if (LightAttached* l = dynamic_cast<LightAttached*>(light))
+		{
+			continue;
+		}
+		light->update();
 	}
 	
 	for (auto i : objects) {

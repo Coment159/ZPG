@@ -8,26 +8,25 @@
 #include <glm/gtc/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale, glm::perspective
 #include <glm/gtc/type_ptr.hpp> // glm::value_ptr
 #include <memory>
-
-
-class Transformation {
+#include <vector>
+class BasicTransform {
 public:
-    virtual ~Transformation() = default;
+    virtual ~BasicTransform() = default;
 
     virtual glm::mat4 getMatrix() const = 0;
 
-    virtual std::unique_ptr<Transformation> clone() const = 0;
+    virtual std::unique_ptr<BasicTransform> clone() const = 0;
 };
 
 
-class Translation : public Transformation {
+class Translation : public BasicTransform {
 public:
     Translation(float x, float y, float z) : translationVector(x, y, z) {}
 
     glm::mat4 getMatrix() const override {
         return glm::translate(glm::mat4(1.0f), translationVector);
     }
-    std::unique_ptr<Transformation> clone() const override {
+    std::unique_ptr<BasicTransform> clone() const override {
         return std::make_unique<Translation>(*this);
     }
 
@@ -35,7 +34,7 @@ private:
     glm::vec3 translationVector;
 };
 
-class Rotation : public Transformation {
+class Rotation : public BasicTransform {
 public:
     Rotation(float angle, float x, float y, float z) : angle(angle), axis(x, y, z) {}
 
@@ -43,7 +42,7 @@ public:
         return glm::rotate(glm::mat4(1.0f), angle, axis);
     }
 
-    std::unique_ptr<Transformation> clone() const override {
+    std::unique_ptr<BasicTransform> clone() const override {
         return std::make_unique<Rotation>(*this);
     }
 
@@ -52,14 +51,14 @@ private:
     glm::vec3 axis;
 };
 
-class Scaling : public Transformation {
+class Scaling : public BasicTransform {
 public:
     Scaling(float scale) : scaleVector(scale, scale, scale) {}
 
     glm::mat4 getMatrix() const override {
         return glm::scale(glm::mat4(1.0f), scaleVector);
     }
-    std::unique_ptr<Transformation> clone() const override {
+    std::unique_ptr<BasicTransform> clone() const override {
         return std::make_unique<Scaling>(*this);
     }
 
@@ -67,9 +66,9 @@ private:
     glm::vec3 scaleVector;
 };
 
-class DynamicTranslation : public Transformation {
+class DynamicTranslation : public BasicTransform {
 public:
-    DynamicTranslation(const glm::vec3& center, float& radius, float& speed)
+    DynamicTranslation(const glm::vec3& center, float radius, float speed)
         : center(center), radius(radius), speed(speed), angle(0.0f) {}
 
     glm::mat4 getMatrix() const override {
@@ -79,7 +78,7 @@ public:
         return glm::translate(glm::mat4(1.0f), center + glm::vec3(xOffset, 0.0f, zOffset));
     }
 
-    std::unique_ptr<Transformation> clone() const override {
+    std::unique_ptr<BasicTransform> clone() const override {
         return std::make_unique<DynamicTranslation>(*this);
     }
 
@@ -90,11 +89,11 @@ public:
 private:
     glm::vec3 center;
     float radius;
-    float& speed;
+    float speed;
     float angle; 
 };
 
-class DynamicRotation : public Transformation {
+class DynamicRotation : public BasicTransform {
 public:
     DynamicRotation(const glm::vec3 axis, float speed)
         : axis(axis), speed(speed), angle(0.0f) {}
@@ -103,7 +102,7 @@ public:
         return glm::rotate(glm::mat4(1.0f), angle, axis);
     }
 
-    std::unique_ptr<Transformation> clone() const override {
+    std::unique_ptr<BasicTransform> clone() const override {
         return std::make_unique<DynamicRotation>(*this);
     }
 
@@ -116,6 +115,22 @@ private:
     float speed;
     float angle;    
 };
+/*
+class Transformation {
+public:
+
+    glm::mat4 getModelMatrix() const {
+        glm::mat4 modelMatrix = glm::mat4(1.0f);
+        for (const auto& transform : transformations) {
+            modelMatrix *= transform->getMatrix();
+        }
+        return modelMatrix;
+    }
+private:
+    std::vector<std::unique_ptr<BasicTransform>> transformations;
+};
+*/
+
 
 /*
 class Transformation {

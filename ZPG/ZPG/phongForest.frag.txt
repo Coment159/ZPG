@@ -3,14 +3,18 @@
 in vec3 Normal;
 in vec3 FragPos;
 
+
 out vec4 frag_colour;
 
 #define MAX_LIGHTS 4
 
 // Definice struktury svìtla
 struct Light {
+    vec3 type;
     vec3 position;
+    vec3 lightDirection;
     vec3 color;
+    float cutOff;
 };
 
 uniform Light lights[MAX_LIGHTS];
@@ -28,11 +32,15 @@ void main() {
     vec3 viewDir = normalize(viewPos - FragPos);
 
     // Nastavení základních hodnot ambientního a spekulárního osvìtlení
-    float ambientStrength = 0.01;
+    float ambientStrength = 0;
     float specularStrength = 0.5;
 
     // Pro všechna svìtla v poli
     for (int i = 0; i < numberOfLights; i++) {
+
+        //SPOT
+
+        if(lights[i].type.x == 1){
         // Ambientní složka (každé svìtlo pøispívá svou barvou)
         vec3 ambient = ambientStrength * lights[i].color;
 
@@ -55,8 +63,54 @@ void main() {
 
         // Pøiètení pøíspìvku aktuálního svìtla
         result += ambient + diffuse + specular;
+
+        }
+        // DIRECTION
+        else if(lights[i].type.y == 1){
+        // Ambientní složka (každé svìtlo pøispívá svou barvou)
+        vec3 ambient = ambientStrength * lights[i].color;
+
+        // Difúzní složka
+        vec3 lightDir = normalize(lights[i].lightDirection);
+        float diff = max(dot(norm, lightDir), 0.0);
+        vec3 diffuse = diff * lights[i].color;
+
+        // Spekulární složka
+        vec3 reflectDir = reflect(-lightDir, norm);
+        float spec = pow(max(dot(viewDir, reflectDir), 0.0), 256);
+        vec3 specular = specularStrength * spec * lights[i].color;  
+
+        // Pøiètení pøíspìvku aktuálního svìtla
+        result += ambient + diffuse + specular;
+
+        }
+        //FLASHLIGHT
+        else if(lights[i].type.z == 1){
+            vec3 lightVector = normalize(lights[i].position - FragPos);
+            vec3 reflectVector = normalize(reflect(-lightVector, normalize(Normal)));
+            
+
+            float diff = max(dot(normalize(lightVector), normalize(Normal)), 0.0);
+            float spec = pow(max(dot(reflectVector, viewDir), 0.0), 32);
+            float spot = dot(normalize(lights[i].lightDirection), -lightVector);
+
+            if(spot < lights[i].cutOff){
+                spec = 0; diff = 0;
+            }
+
+            spot = (spot-lights[i].cutOff)/(1-lights[i].cutOff);
+            spot = clamp(spot, 0.0, 1.0);
+            result += ((diff + spec) * spot) * lights[i].color;
+        }
+        // No light.
+        else{
+        
+        }
+
+
+
     }
 
     // Výsledná barva
-    frag_colour = vec4((result * Normal), 1.0);
+    frag_colour = vec4((result * vec3(0.385, 0.647, 0.812)), 1.0);
 }
