@@ -1,0 +1,16 @@
+C obecné:
+..\..\Libs\glm-master
+..\..\Libs\glew-2.1.0\include
+..\..\Libs\glfw-3.4.bin.WIN32\include
+
+Linker obecné:
+..\..\Libs\glew-2.1.0\lib\Release\Win32
+..\..\Libs\glfw-3.4.bin.WIN32\lib-vc2022
+
+Linker vstup:
+opengl32.lib
+glu32.lib
+glew32.lib
+glfw3.lib
+
+x86

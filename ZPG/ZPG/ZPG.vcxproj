@@ -22,7 +22,10 @@
     <ClInclude Include="application.h" />
     <ClInclude Include="callbacks.h" />
     <ClInclude Include="camera.h" />
+    <ClInclude Include="IHasFront.h" />
+    <ClInclude Include="IHasPosition.h" />
     <ClInclude Include="Light.h" />
+    <ClInclude Include="LightAttached.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="Models\bushes.h" />
     <ClInclude Include="Models\gift.h" />
@@ -53,7 +56,9 @@
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="drawableObject.cpp" />
     <ClCompile Include="drawableObject.h" />
+    <ClCompile Include="IHasPosition.cpp" />
     <ClCompile Include="Light.cpp" />
+    <ClCompile Include="LightAttached.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="model.cpp" />
     <ClCompile Include="Observer.cpp" />
@@ -158,10 +163,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\Libs\glm-master;..\..\Libs\glew-2.1.0\include;..\..\Libs\glfw-3.4.bin.WIN32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\Libs\glew-2.1.0\lib\Release\Win32;..\..\Libs\glfw-3.4.bin.WIN32\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

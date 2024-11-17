@@ -84,6 +84,15 @@
     <ClInclude Include="triangle.h">
       <Filter>Resource Files\Models</Filter>
     </ClInclude>
+    <ClInclude Include="LightAttached.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IHasPosition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IHasFront.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="phong.frag.txt">
@@ -149,6 +158,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LightAttached.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IHasPosition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -4,7 +4,7 @@
 
 #include "shaderProgram.h"
 #include "drawableObject.h"
-#include "Light.h"
+#include "LightAttached.h"
 
 class Scene
 {
