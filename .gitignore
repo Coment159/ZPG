@@ -1,1 +1,16 @@
+*.o
+*.obj
+*.exe
+*.out
+*.so
+*.dylib
 
+.sv/
+*.vsidx
+*.ipch
+*.tlog
+*.tlog
+*.tlog
+*.tlog
+*.tlog
+*.lastbuildstate

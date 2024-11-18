@@ -39,7 +39,11 @@ void main() {
     for (int i = 0; i < numberOfLights; i++) {
 
         //SPOT
+<<<<<<< HEAD
         /*
+=======
+
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
         if(lights[i].type.x == 1){
         // Ambientní složka (každé svìtlo pøispívá svou barvou)
         vec3 ambient = ambientStrength * lights[i].color;
@@ -65,11 +69,16 @@ void main() {
         result += ambient + diffuse + specular;
 
         }
+<<<<<<< HEAD
 
      
         // DIRECTION
         
         else    */if(lights[i].type.y == 1){
+=======
+        // DIRECTION
+        else if(lights[i].type.y == 1){
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
         // Ambientní složka (každé svìtlo pøispívá svou barvou)
         vec3 ambient = ambientStrength * lights[i].color;
 
@@ -103,11 +112,14 @@ void main() {
 
             spot = (spot-lights[i].cutOff)/(1-lights[i].cutOff);
             spot = clamp(spot, 0.0, 1.0);
+<<<<<<< HEAD
 
             float distance = length(lights[i].position - FragPos);
             float attentuation = 1.0 / (distance + 0.64 * (distance * distance)); 
             diff  *= attentuation;
             spec *= attentuation; 
+=======
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
             result += ((diff + spec) * spot) * lights[i].color;
         }
         // No light.
@@ -120,6 +132,10 @@ void main() {
     }
 
     // Výsledná barva
+<<<<<<< HEAD
      frag_colour = vec4((result * Normal), 1.0);
     //frag_colour = vec4((result * vec3(0.385, 0.647, 0.812)), 1.0);
+=======
+    frag_colour = vec4((result * vec3(0.385, 0.647, 0.812)), 1.0);
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 d:\zpg\1cv\zpg\zpg\x64\debug\vc143.pdb
 d:\zpg\1cv\zpg\zpg\x64\debug\vc143.idb
 d:\zpg\1cv\zpg\zpg\x64\debug\main.obj
@@ -20,3 +21,33 @@ h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\link.command.1.tlog
 h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\link.read.1.tlog
 h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\link.secondary.1.tlog
 h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\link.write.1.tlog
+=======
+h:\zpggit\zpg\zpg\zpg\x64\debug\vc143.pdb
+h:\zpggit\zpg\zpg\zpg\x64\debug\vc143.idb
+h:\zpggit\zpg\zpg\zpg\x64\debug\vbo.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\vao.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\subject.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\shaderprogram.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\shaderloader.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\second.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\scene.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\observer.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\model.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\main.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\light.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\drawableobject.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\camera.obj
+h:\zpggit\zpg\zpg\zpg\x64\debug\application.obj
+h:\zpggit\zpg\zpg\x64\debug\zpg.pdb
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\cl.command.1.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\cl.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\cl.write.1.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link-cvtres.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link-cvtres.write.1.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link-rc.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link-rc.write.1.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link.command.1.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link.read.2.tlog
+h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link.write.1.tlog
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h:\zpg\v.3\zpg\zpg\debug\vc143.pdb
 h:\zpg\v.3\zpg\zpg\debug\vc143.idb
 h:\zpg\v.3\zpg\zpg\debug\vbo.obj
@@ -44,3 +45,39 @@ h:\zpg\zpg\zpg\zpg\debug\zpg.tlog\link.command.1.tlog
 h:\zpg\zpg\zpg\zpg\debug\zpg.tlog\link.read.1.tlog
 h:\zpg\zpg\zpg\zpg\debug\zpg.tlog\link.secondary.1.tlog
 h:\zpg\zpg\zpg\zpg\debug\zpg.tlog\link.write.1.tlog
+=======
+h:\zpggit\zpg\zpg\zpg\debug\vc143.pdb
+h:\zpggit\zpg\zpg\zpg\debug\vc143.idb
+h:\zpggit\zpg\zpg\zpg\debug\vbo.obj
+h:\zpggit\zpg\zpg\zpg\debug\vao.obj
+h:\zpggit\zpg\zpg\zpg\debug\subject.obj
+h:\zpggit\zpg\zpg\zpg\debug\shaderprogram.obj
+h:\zpggit\zpg\zpg\zpg\debug\shaderloader.obj
+h:\zpggit\zpg\zpg\zpg\debug\second.obj
+h:\zpggit\zpg\zpg\zpg\debug\scene.obj
+h:\zpggit\zpg\zpg\zpg\debug\observer.obj
+h:\zpggit\zpg\zpg\zpg\debug\model.obj
+h:\zpggit\zpg\zpg\zpg\debug\main.obj
+h:\zpggit\zpg\zpg\zpg\debug\lightattached.obj
+h:\zpggit\zpg\zpg\zpg\debug\light.obj
+h:\zpggit\zpg\zpg\zpg\debug\ihasposition.obj
+h:\zpggit\zpg\zpg\zpg\debug\drawableobject.obj
+h:\zpggit\zpg\zpg\zpg\debug\camera.obj
+h:\zpggit\zpg\zpg\zpg\debug\application.obj
+h:\zpggit\zpg\zpg\zpg\debug\zpg.ilk
+h:\zpggit\zpg\zpg\debug\zpg.pdb
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\cl.command.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\cl.items.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\cl.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\cl.write.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.30260-cvtres.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.30260-cvtres.write.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.30260-rc.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.30260-rc.write.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.30260.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.30260.write.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.command.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.secondary.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.write.1.tlog
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0

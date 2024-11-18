@@ -72,19 +72,27 @@ void Application::initialize()
 	Scene* scene2 = scene.at(1);
 	scene2->cam = camera;
 	scene2->addSubjectToShader(dynamic_cast<Subject*>(scene2->cam));
+<<<<<<< HEAD
 	scene2->light->lightPosition = glm::vec3(0, 0, 0);
 
 
+=======
+	scene2->light->lightPosition = glm::vec3(0, 5, 0);
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
 	scene2->lights.push_back(new Light(2.0f,0,0.01f));
 	scene2->lights.at(1)->lightPosition = glm::vec3(0,1,2);
 	scene2->lights.at(1)->speed *= 2;
 
+<<<<<<< HEAD
 
 	scene2->lights.push_back(new Light(2.0f, 0, -0.01f));
 	scene2->lights.at(2)->lightPosition = glm::vec3(1, 1, 2);
 	//scene2->lights.at(2)->speed *= 2;
 
 	scene2->lights.push_back(new LightAttached(camera,REFLECTOR , 30.f));
+=======
+	scene2->lights.push_back(new LightAttached(camera,30.f));
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
 
 	//3rd scene
 	scene.push_back(new Scene("default.vert.txt", "phongForest.frag.txt"));
@@ -92,7 +100,11 @@ void Application::initialize()
 	scene3->cam = camera;
 	scene3->addSubjectToShader(dynamic_cast<Subject*>(scene3->cam));
 	scene3->light = new Light();
+<<<<<<< HEAD
 	scene3->lights.push_back(new LightAttached(camera, REFLECTOR, 30.f));
+=======
+	scene3->lights.push_back(new LightAttached(camera, 30.f));
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
 
 
 	//4rd scene
@@ -230,7 +242,10 @@ void Application::createForest()
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->light));
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(1)));
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(2)));
+<<<<<<< HEAD
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(3)));
+=======
+>>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
 	
 	auto obj = activeScene->addObject(tree, treeSize);
 	
