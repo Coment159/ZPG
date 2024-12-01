@@ -138,7 +138,7 @@ void Application::createModels()
 	models["login"] = new Model("Models/login.obj");
 	models["house"] = new Model("Models/house.obj");
 	models["zoombi"] = new Model("Models/zombie.obj");
-	models["car"] = new Model("Models/car.obj");
+	models["car"] = new Model("Models/car.obj",false);
 	
 
 	materials["triangleTextured2"] = new Material();
