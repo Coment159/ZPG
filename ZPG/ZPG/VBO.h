@@ -15,12 +15,20 @@
 #include <sstream>
 #include <iostream>
 
+struct Vertex
+{
+	float Position[3];
+	float Normal[3];
+	float Texture[2];
+	float Tangent[3];
+};
+
 class VBO
 {
 public:
 	VBO() {};
-	VBO(const float verticies[], GLuint size);
-
+	VBO(const float verticies[], GLuint size, int lenght = 6);
+	VBO(Vertex* vertices, GLuint size);
 
 	void Bind();
 	void Unbind();

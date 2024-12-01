@@ -1,0 +1,117 @@
+#version 330 core
+
+in vec3 Normal;
+in vec3 FragPos;
+in vec2 VerTex;
+
+struct Material {
+    vec3 diffColor;
+    vec3 specColor;
+    vec3 ambientColor;
+    float shine;
+};
+
+out vec4 frag_colour;
+
+#define MAX_LIGHTS 10
+
+struct Light {
+    vec3 type;
+    vec3 position;
+    vec3 lightDirection;
+    vec3 color;
+    float cutOff;
+};
+
+uniform sampler2D textureUnitID; // Texture sampler
+uniform Light lights[MAX_LIGHTS];
+uniform Material material;
+uniform int numberOfLights;
+
+uniform vec3 viewPos;
+
+void main() {
+    vec3 result = vec3(0.0);
+
+    vec3 norm = normalize(Normal);
+    vec3 viewDir = normalize(viewPos - FragPos);
+
+    float ambientStrength = 0.1; // Ambient strength
+    float specularStrength = 0.5;
+
+     vec4 texColor = texture(textureUnitID, VerTex);
+
+
+    for (int i = 0; i < numberOfLights; i++) {
+        // SPOT LIGHT
+        if (lights[i].type.x == 1) {
+            vec3 ambient = ambientStrength * lights[i].color * texColor.rgb;
+
+            vec3 lightDir = normalize(lights[i].position - FragPos);
+            float diff = max(dot(norm, lightDir), 0.0);
+            vec3 diffuse = diff * lights[i].color;
+
+            vec3 reflectDir = reflect(-lightDir, norm);
+            float spec = pow(max(dot(viewDir, reflectDir), 0.0), 256);
+            vec3 specular = specularStrength * spec * lights[i].color;
+
+            float distance = length(lights[i].position - FragPos);
+            float attenuation = 1.0 / (distance + 0.512 * (distance * distance));
+            ambient *= attenuation;
+            diffuse *= attenuation;
+            specular *= attenuation;
+
+            result += ambient + diffuse + specular;
+        }
+
+        // DIRECTIONAL LIGHT
+        else if (lights[i].type.y == 1) {
+            vec3 ambient = ambientStrength * lights[i].color  * texColor.rgb;
+
+            vec3 lightDir = normalize(lights[i].lightDirection);
+            float diff = max(dot(norm, lightDir), 0.0);
+            vec3 diffuse = diff * lights[i].color;
+
+            vec3 reflectDir = reflect(-lightDir, norm);
+            float spec = pow(max(dot(viewDir, reflectDir), 0.0), 256);
+            vec3 specular = specularStrength * spec * lights[i].color;
+
+            result += ambient + diffuse + specular;
+        }
+
+        // FLASHLIGHT
+        else if (lights[i].type.z == 1) {
+            vec3 lightVector = normalize(lights[i].position - FragPos);
+            vec3 reflectVector = normalize(reflect(-lightVector, normalize(Normal)));
+
+            float diff = max(dot(normalize(lightVector), normalize(Normal)), 0.0);
+            float spec = pow(max(dot(reflectVector, viewDir), 0.0), 32);
+            float spot = dot(normalize(lights[i].lightDirection), -lightVector);
+
+            if (spot < lights[i].cutOff) {
+                spec = 0;
+                diff = 0;
+            }
+
+            spot = (spot - lights[i].cutOff) / (1 - lights[i].cutOff);
+            spot = clamp(spot, 0.0, 1.0);
+
+            float distance = length(lights[i].position - FragPos);
+            float attenuation = 1.0 / (distance + 0.64 * (distance * distance));
+            diff *= attenuation;
+            spec *= attenuation;
+
+            result += ((diff + spec) * spot) * lights[i].color;
+        }
+    }
+
+    // Sample the texture color
+   
+
+    // Combine texture color with the lighting result
+    vec3 finalColor = texColor.rgb * result;
+
+    // Output the final fragment color
+    frag_colour = vec4(finalColor, 1);
+   //frag_colour = vec4(texture(textureUnitID, VerTex).rgb, 1.0); 
+}

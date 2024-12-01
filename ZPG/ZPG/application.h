@@ -11,9 +11,22 @@
 #include "Models/bushes.h"
 #include "Models/triangle.h"
 #include "Models/plain.h"
+#include <unordered_map>
+#include "Material.h"
+#include "triangleT.h"
+#include "plainT.h"
+
+
+#include<assimp/Importer.hpp>// C++ importerinterface
+#include<assimp/scene.h>// aiSceneoutputdata structure
+#include<assimp/postprocess.h>// Post processingflags
+
+#define GLM_ENABLE_EXPERIMENTAL
 static float lastX = 400;
 static float lastY = 300;
 static bool firstMouse = true;
+
+
 class Application
 {
 public:
@@ -46,6 +59,7 @@ public:
 private:
 	GLFWwindow* window = nullptr;
 
+
 	const char* fragFile = "default.frag.txt";
 	const char* vertFile = "default.vert.txt";
 
@@ -57,10 +71,9 @@ private:
 
 	Camera* camera = new Camera();
 
-
-
-
-
+	std::unordered_map<std::string, Model*> models;
+	std::unordered_map<std::string, Material*> materials;
+	std::unordered_map<std::string, ShaderProgram*> shaders;
 
 };
 

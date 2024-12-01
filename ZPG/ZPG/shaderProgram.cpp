@@ -40,6 +40,28 @@ void ShaderProgram::activate()
 	glUseProgram(this->shaderProgramID);
 }
 
+void ShaderProgram::setMaterial(Material* material)
+{
+	setVec3("material.diffColor", material->diffColor);
+	setVec3("material.specColor", material->specColor);
+	setVec3("material.ambientColor", material->ambientColor);
+	setFloat("material.shine", material->shine);
+
+	GLuint textureId = glGetUniformLocation(shaderProgramID, "textureUnitID");
+	if ((textureId != 0) && (material->basicTexture != -1))
+	{
+		glUniform1i(textureId, material->basicTexture);
+	}
+}
+
+void ShaderProgram::setTextureUnit(const char* location, GLuint value)
+{
+	glUseProgram(shaderProgramID);
+	GLuint id = glGetUniformLocation(shaderProgramID, location);
+	glUniform1i(id, value);
+}
+
+
 void ShaderProgram::addSubject(Subject* sub)
 {
 	sub->attach(this);
@@ -97,7 +119,23 @@ void ShaderProgram::notify(Subject* sub)
 
 void ShaderProgram::setVec3(const char* vector, glm::vec3 values)
 {
-	glUniform3f(glGetUniformLocation(this->shaderProgramID, vector), values.x, values.y, values.z);
+	GLuint id = glGetUniformLocation(this->shaderProgramID, vector);
+	if (id != 0)
+	{
+		glUniform3f(id, values.x, values.y, values.z);
+	}
+	
+}
+
+void ShaderProgram::setFloat(const char* var, float value)
+{
+	GLuint id = glGetUniformLocation(shaderProgramID, var);
+	if (id != 0)
+	{
+		glUniform1f(id, value);
+	}
+
+	
 }
 
 int ShaderProgram::findLight(Light* light)

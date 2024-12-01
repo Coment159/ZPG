@@ -26,6 +26,7 @@
     <ClInclude Include="IHasPosition.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="LightAttached.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="model.h" />
     <ClInclude Include="Models\bushes.h" />
     <ClInclude Include="Models\gift.h" />
@@ -35,13 +36,18 @@
     <ClInclude Include="Models\suzi_smooth.h" />
     <ClInclude Include="Models\tree.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="plainT.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="ShaderLoader.h" />
     <ClInclude Include="Subject.h" />
+    <ClInclude Include="Sykbox.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="transformation.h" />
     <ClInclude Include="triangle.h" />
+    <ClInclude Include="triangleT.h" />
     <ClInclude Include="VAO.h" />
+    <ClInclude Include="VAOT.h" />
     <ClInclude Include="VBO.h" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +56,8 @@
     <None Include="default.frag.txt" />
     <None Include="phong.frag.txt" />
     <None Include="default.vert.txt" />
+    <None Include="Shaders\PhongFragmentShader.glsl" />
+    <None Include="Shaders\PhongVertexShader.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp" />
@@ -60,6 +68,7 @@
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="LightAttached.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="model.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="scene.cpp" />
@@ -68,11 +77,21 @@
     <ClCompile Include="shaderProgram.cpp" />
     <ClCompile Include="shaderProgram.h" />
     <ClCompile Include="Subject.cpp" />
+    <ClCompile Include="Sykbox.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VAO.cpp" />
+    <ClCompile Include="VAOT.cpp" />
     <ClCompile Include="VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="phongForest.frag.txt" />
+    <Text Include="Shaders\SkyboxFragment.txt" />
+    <Text Include="Shaders\SkyboxVertex.txt" />
+    <Text Include="textureFragment.txt" />
+    <Text Include="textureVertex.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\test.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -132,13 +151,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\Libs\glm-master;..\..\Libs\glew-2.1.0\include;..\..\Libs\glfw-3.4.bin.WIN32\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Libs\soil\include;..\..\Libs\glm-master;..\..\Libs\glew-2.1.0\include;..\..\Libs\glfw-3.4.bin.WIN32\include;..\..\Libs\assimp\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\Libs\glew-2.1.0\lib\Release\Win32;..\..\Libs\glfw-3.4.bin.WIN32\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Libs\assimp\lib\Win32\v140\Release;..\..\Libs\soil\lib-vc2012\Platform_Win32;..\..\Libs\glew-2.1.0\lib\Release\Win32;..\..\Libs\glfw-3.4.bin.WIN32\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc140-mt.lib;SOIL.lib;opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

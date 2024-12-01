@@ -2,11 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-<<<<<<< HEAD
-      <FullPath>H:\ZPG\ZPG\ZPG\Debug\ZPG.exe</FullPath>
-=======
       <FullPath>H:\ZPGgit\ZPG\ZPG\Debug\ZPG.exe</FullPath>
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

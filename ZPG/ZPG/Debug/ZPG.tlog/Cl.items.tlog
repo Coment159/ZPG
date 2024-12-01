@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\application.obj
-H:\ZPG\ZPG\ZPG\ZPG\camera.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\camera.obj
-H:\ZPG\ZPG\ZPG\ZPG\drawableObject.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\drawableObject.obj
-H:\ZPG\ZPG\ZPG\ZPG\drawableObject.h;H:\ZPG\ZPG\ZPG\ZPG\Debug\drawableObject.obj
-H:\ZPG\ZPG\ZPG\ZPG\Light.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\Light.obj
-H:\ZPG\ZPG\ZPG\ZPG\main.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\main.obj
-H:\ZPG\ZPG\ZPG\ZPG\model.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\model.obj
-H:\ZPG\ZPG\ZPG\ZPG\Observer.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\Observer.obj
-H:\ZPG\ZPG\ZPG\ZPG\scene.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\scene.obj
-H:\ZPG\ZPG\ZPG\ZPG\second.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\second.obj
-H:\ZPG\ZPG\ZPG\ZPG\ShaderLoader.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\ShaderLoader.obj
-H:\ZPG\ZPG\ZPG\ZPG\shaderProgram.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\shaderProgram.obj
-H:\ZPG\ZPG\ZPG\ZPG\shaderProgram.h;H:\ZPG\ZPG\ZPG\ZPG\Debug\shaderProgram.obj
-H:\ZPG\ZPG\ZPG\ZPG\Subject.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\Subject.obj
-H:\ZPG\ZPG\ZPG\ZPG\VAO.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\VAO.obj
-H:\ZPG\ZPG\ZPG\ZPG\VBO.cpp;H:\ZPG\ZPG\ZPG\ZPG\Debug\VBO.obj
-=======
 H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\application.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\camera.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\camera.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\drawableObject.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\drawableObject.obj
@@ -24,6 +6,7 @@ H:\ZPGgit\ZPG\ZPG\ZPG\IHasPosition.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\IHasPosition.
 H:\ZPGgit\ZPG\ZPG\ZPG\Light.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\Light.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\LightAttached.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\LightAttached.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\main.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\main.obj
+H:\ZPGgit\ZPG\ZPG\ZPG\Material.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\Material.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\model.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\model.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\Observer.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\Observer.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\scene.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\scene.obj
@@ -32,6 +15,8 @@ H:\ZPGgit\ZPG\ZPG\ZPG\ShaderLoader.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\ShaderLoader.
 H:\ZPGgit\ZPG\ZPG\ZPG\shaderProgram.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\shaderProgram.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\shaderProgram.h;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\shaderProgram.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\Subject.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\Subject.obj
+H:\ZPGgit\ZPG\ZPG\ZPG\Sykbox.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\Sykbox.obj
+H:\ZPGgit\ZPG\ZPG\ZPG\Texture.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\Texture.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\VAO.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\VAO.obj
+H:\ZPGgit\ZPG\ZPG\ZPG\VAOT.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\VAOT.obj
 H:\ZPGgit\ZPG\ZPG\ZPG\VBO.cpp;H:\ZPGgit\ZPG\ZPG\ZPG\Debug\VBO.obj
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0

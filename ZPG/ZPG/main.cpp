@@ -1,6 +1,7 @@
 ﻿#include "application.h"
 
 
+
 //application, shaderprogram id nesmi opustit shaderprogram, drawableobject(model) 
 
 int main(void)
@@ -10,7 +11,7 @@ int main(void)
 
 	app->initialize();
 
-	//app->createShaders();
+	app->createShaders();
 	app->createModels();
 
 	app->run();

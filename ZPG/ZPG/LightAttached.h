@@ -6,13 +6,8 @@
 class LightAttached : public Light, public Observer
 {
 public:
-<<<<<<< HEAD
 	LightAttached(Subject*  sub, LightType type = REFLECTOR, float angle = 30, glm::vec3 color = glm::vec3(1,1,1)):
 	Light(type)
-=======
-	LightAttached(Subject*  sub, float angle, glm::vec3 color = glm::vec3(1,1,1)):
-	Light(REFLECTOR), sub(sub)
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
 	{
 		this->cutOff = angle;
 		this->lightColor = color;
@@ -35,15 +30,7 @@ public:
 
 		notifyAll();
 	}
-<<<<<<< HEAD
 };
 
 
 
-=======
-
-private:
-	Subject* sub;
-};
-
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0

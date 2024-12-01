@@ -1,20 +1,15 @@
-<<<<<<< HEAD
-﻿  scene.cpp
-  ZPG.vcxproj -> H:\ZPG\ZPG\ZPG\Debug\ZPG.exe
-=======
-﻿  application.cpp
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(118,47): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(150,12): warning C4244: inicializování: double se převádí na int; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(211,21): warning C4018: >=: signed/unsigned – neshoda
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(235,44): warning C4244: argument: size_t se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(262,45): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(273,44): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(296,44): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(350,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(351,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(354,19): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(355,19): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(356,13): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(357,13): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+﻿  model.cpp
+Debug\drawableObject.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
+Debug\shaderProgram.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
+  SOIL.lib(SOIL.obj) : Našel se modul .net MSIL nebo modul zkompilovaný pomocí /GL. Propojení se restartuje s parametrem /LTCG. Výkon linkeru můžete zlepšit přidáním parametru /LTCG na příkazový řádek propojení.
+LINK : warning LNK4075: /INCREMENTAL se ignoruje kvůli specifikaci /LTCG.
+Debug\drawableObject.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
+Debug\shaderProgram.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
+LINK : warning LNK4098: Výchozí knihovna MSVCRT je v konfliktu s použitím jiných knihoven. Použijte /NODEFAULTLIB:library.
+  Vytváří se kód.
+  Vytváření kódu se dokončilo.
+SOIL.lib(SOIL.obj) : warning LNK4099: Soubor .pdb  se nenašel s SOIL.lib(SOIL.obj) nebo na . Objekt se propojí, jako by nebyly dostupné žádné ladicí informace.
+SOIL.lib(stb_image_aug.obj) : warning LNK4099: Soubor .pdb  se nenašel s SOIL.lib(stb_image_aug.obj) nebo na . Objekt se propojí, jako by nebyly dostupné žádné ladicí informace.
+SOIL.lib(image_helper.obj) : warning LNK4099: Soubor .pdb  se nenašel s SOIL.lib(image_helper.obj) nebo na . Objekt se propojí, jako by nebyly dostupné žádné ladicí informace.
+SOIL.lib(image_DXT.obj) : warning LNK4099: Soubor .pdb  se nenašel s SOIL.lib(image_DXT.obj) nebo na . Objekt se propojí, jako by nebyly dostupné žádné ladicí informace.
   ZPG.vcxproj -> H:\ZPGgit\ZPG\ZPG\Debug\ZPG.exe
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0

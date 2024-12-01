@@ -4,6 +4,7 @@
 #include "ShaderLoader.h"
 #include "camera.h"
 #include "Light.h"
+#include "Material.h"
 
 class Camera;
 class ShaderProgram : ShaderLoader, public Observer
@@ -16,7 +17,9 @@ public:
 	void setModelMatrix(glm::mat4 M);
 	void activate();
 
+	void setMaterial(Material* material);
 
+	void setTextureUnit(const char* location, GLuint value);
 
 	//Observer
 	void addSubject(Subject* sub);
@@ -26,6 +29,8 @@ public:
 
 private:
 	void setVec3(const char* vector, glm::vec3 values);
+	void setFloat(const char* var, float value);
+
 	int findLight(Light* light);
 
 	GLuint modelMatrixId;
@@ -42,7 +47,7 @@ private:
 	//Camera* cam = nullptr;
 	//Light* light = nullptr;
 
-	Light* lights[4];
+	Light* lights[10];
 	int lightIndex = 0;
 
 	const char* vertFile;

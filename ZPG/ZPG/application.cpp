@@ -50,6 +50,11 @@ Application::Application()
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(-ratio, ratio, -1.f, 1.f, 1.f, -1.f);
+
+
+	int a;
+	glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, &a);
+	printf("Texture units: %d\n", a);
 }
 
 Application::~Application()
@@ -66,33 +71,27 @@ void Application::initialize()
 	activeScene = scene.at(activeSceneInt);
 	activeScene->cam = camera;
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->cam));
+	activeScene->lights.push_back(new Light());
+
 
 	//2nd scene
 	scene.push_back(new Scene("default.vert.txt", "phongForest.frag.txt"));
 	Scene* scene2 = scene.at(1);
 	scene2->cam = camera;
 	scene2->addSubjectToShader(dynamic_cast<Subject*>(scene2->cam));
-<<<<<<< HEAD
 	scene2->light->lightPosition = glm::vec3(0, 0, 0);
 
 
-=======
-	scene2->light->lightPosition = glm::vec3(0, 5, 0);
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
 	scene2->lights.push_back(new Light(2.0f,0,0.01f));
 	scene2->lights.at(1)->lightPosition = glm::vec3(0,1,2);
 	scene2->lights.at(1)->speed *= 2;
 
-<<<<<<< HEAD
 
 	scene2->lights.push_back(new Light(2.0f, 0, -0.01f));
 	scene2->lights.at(2)->lightPosition = glm::vec3(1, 1, 2);
 	//scene2->lights.at(2)->speed *= 2;
 
 	scene2->lights.push_back(new LightAttached(camera,REFLECTOR , 30.f));
-=======
-	scene2->lights.push_back(new LightAttached(camera,30.f));
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
 
 	//3rd scene
 	scene.push_back(new Scene("default.vert.txt", "phongForest.frag.txt"));
@@ -100,11 +99,7 @@ void Application::initialize()
 	scene3->cam = camera;
 	scene3->addSubjectToShader(dynamic_cast<Subject*>(scene3->cam));
 	scene3->light = new Light();
-<<<<<<< HEAD
-	scene3->lights.push_back(new LightAttached(camera, REFLECTOR, 30.f));
-=======
-	scene3->lights.push_back(new LightAttached(camera, 30.f));
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
+	scene3->lights.push_back(new Light());
 
 
 	//4rd scene
@@ -117,16 +112,48 @@ void Application::initialize()
 
 void Application::createShaders()
 {
+	/*
 	Scene* sc = scene[3];
 	sc->createShader("default.vert.txt", "lambert.frag.txt");
 	sc->createShader("default.vert.txt", "phong.frag.txt");
 	sc->createShader("default.vert.txt", "blinn.frag.txt");
-
+	*/
+	shaders["textureShader"] = new ShaderProgram("textureVertex.txt", "textureFragment.txt");
+	shaders["default"] = new ShaderProgram("default.vert.txt", "default.frag.txt");
+	shaders["nemec"] = new ShaderProgram("Shaders/PhongVertexShader.glsl", "Shaders/PhongFragmentShader.glsl");
 }
 
 void Application::createModels()
 {
+	models["tree"] = new Model(tree, treeSize);
+	models["bushes"] = new Model(bushes, bushesSize);
+	models["triangle"] = new Model(triangle, triangleSize);
+	models["plain"] = new Model(plain, plainSize);
+	models["sphere"] = new Model(sphere, sphereSize);
+	models["triangleTextured"] = new Model(triangleT, 6, true);
+	models["plainTextured"] = new Model(triangleT, plainSize, true);
+	//models["treeTextured"] = new Model(tree, treeSize, true);
+
+
+	models["login"] = new Model("Models/login.obj");
+	models["house"] = new Model("Models/house.obj");
+	models["zoombi"] = new Model("Models/zombie.obj");
+	models["car"] = new Model("Models/car.obj");
+	
+
+	materials["triangleTextured2"] = new Material();
+	materials["triangleTextured2"]->addTexture(GL_TEXTURE0, "Textures/test.png");
+	materials["grassTexture"] = new Material();
+	materials["grassTexture"]->addTexture(GL_TEXTURE1, "Textures/grass.png");
+	materials["houseTextured"] = new Material();
+	materials["houseTextured"]->addTexture(GL_TEXTURE2, "Textures/house.png");
+	materials["zoombieTextured"] = new Material();
+	materials["zoombieTextured"]->addTexture(GL_TEXTURE3, "Textures/zombie.png");
+
+
 	activeScene = scene[1];
+	GLuint image = SOIL_load_OGL_cubemap("Textures/posx.jpg", "Textures/negx.jpg", "Textures/posy.jpg", "Textures/negy.jpg", "Textures/posz.jpg", "Textures/negz.jpg", SOIL_LOAD_RGB, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS);
+	activeScene->skybox = new Skybox(GL_TEXTURE5, image, camera);
 	createForest();
 	activeScene = scene[2];
 	create3rdScene();
@@ -134,7 +161,23 @@ void Application::createModels()
 	//create4thScene();
 	
 	activeScene = scene[0];
-	auto obj =  activeScene->addObject(triangle, triangleSize);
+	activeScene->lights.at(1)->lightPosition = glm::vec3(0, 0, 1);
+	activeScene->addSubjectToShader(activeScene->lights.at(1), shaders["textureShader"]);
+	activeScene->addSubjectToShader(camera,  shaders["textureShader"]);
+	auto obj = activeScene->addObject(models["triangleTextured"]
+		, shaders["textureShader"]
+	);
+	obj->addMaterial(materials["grassTexture"]);
+	obj->addTranslation(-1, 0, 0);
+
+	auto obj1 = activeScene->addObject(models["triangleTextured"]
+		, shaders["textureShader"]
+	);
+	obj1->addMaterial(materials["triangleTextured2"]);
+	obj1->addTranslation(1, 0, 0);
+
+	auto house = activeScene->addObject(models["house"], shaders["textureShader"]);
+	house->addMaterial(materials["grassTexture"]);
 	
 
 }
@@ -149,7 +192,15 @@ void Application::run()
 		glEnable(GL_DEPTH_TEST);
 		// clear color and depth buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
 		glLoadIdentity();
+
+		if (activeScene->skybox)
+		{
+			activeScene->skybox->createSkybox();
+			glClear(GL_DEPTH_BUFFER_BIT);
+		}
+
 
 		activeScene->renderScene();
 
@@ -242,12 +293,25 @@ void Application::createForest()
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->light));
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(1)));
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(2)));
-<<<<<<< HEAD
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(3)));
-=======
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0
 	
-	auto obj = activeScene->addObject(tree, treeSize);
+	activeScene->shaders["textureShader"] = new ShaderProgram("textureVertex.txt", "textureFragment.txt");
+	activeScene->shaders["DEFAULT"] = new ShaderProgram("default.vert.txt", "default.frag.txt");
+
+	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->cam), activeScene->shaders["textureShader"]);
+	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->cam), activeScene->shaders["DEFAULT"]);
+
+	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->light), activeScene->shaders["textureShader"]);
+	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(1)), activeScene->shaders["textureShader"]);
+	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(2)), activeScene->shaders["textureShader"]);
+	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(3)), activeScene->shaders["textureShader"]);
+	
+
+
+
+	Model* treeModel = new Model();
+
+	auto obj = activeScene->addObject(models["tree"]);
 	
 	for (size_t i = 0; i < 50; i++)
 	{
@@ -259,7 +323,7 @@ void Application::createForest()
 		randomObject->addRotation(randomAngle, 0, 1 , 0);
 	}
 	obj->addScaling(0.1f);
-	obj = activeScene->addObject(bushes, bushesSize);
+	obj = activeScene->addObject(models["bushes"]);
 	for (size_t i = 0; i < 200; i++)
 	{
 		float randomX = (static_cast<float>(rand()) / RAND_MAX) * 20 - 10.f;
@@ -273,18 +337,44 @@ void Application::createForest()
 
 	obj->addScaling(0.25f);
 
-	int random = rand() % 100;
+	int random;
 	for (auto& o : activeScene->objects) {
+		random = rand() % 100;
 		if (random < 25)
 		{
 			o->addDynamicRotation(0.01f, 0, 1, 0);
 		}
-		random = rand() % 100;
+		
 	}
+	auto house = activeScene->addObject(models["house"], activeScene->shaders["textureShader"]);
+	house->addTranslation(0, 0, 2);
+	house->addMaterial(materials["houseTextured"]);
+	house->addScaling(0.1f);
 
-	auto floor = activeScene->addObject(plain, plainSize);
+	auto car = activeScene->addObject(models["car"]);
+
+	car->addTranslation(-0.5f, 0, 3.6f);
+	car->addRotation(glm::radians(160.f), 0, 1, 0);
+	//car->addMaterial(materials["houseTextured"]);
+	car->addScaling(0.2f);
+
+	auto login = activeScene->addObject(models["login"], activeScene->shaders["DEFAULT"]);
+	login->addTranslation(-1.5f, 1, 0);
+
+	auto zombie = activeScene->addObject(models["zoombi"], activeScene->shaders["textureShader"]);
+	zombie->addMaterial(materials["zoombieTextured"]);
+	zombie->addTranslation(0, 0, 3.2f);
+	zombie->addScaling(0.1f);
+
+
+
+	auto floor = activeScene->addObject(models["plainTextured"], activeScene->shaders["textureShader"]);
+
+
+	floor->addMaterial(materials["grassTexture"]);
 	floor->addScaling(5);
 	floor->addTranslation(0, 0, 0.5f);
+	floor->addRotation(glm::radians(-90.f), 1, 0, 0);
 }
 
 void Application::create3rdScene()
@@ -293,7 +383,7 @@ void Application::create3rdScene()
 	activeScene->addSubjectToShader(dynamic_cast<Subject*>(activeScene->lights.at(1)));
 	//activeScene->light->lightPosition = glm::vec3(0,0,0);
 
-	auto obj = activeScene->addObject(sphere, sphereSize);
+	auto obj = activeScene->addObject(models["sphere"]);
 
 	obj->addTranslation(2, 0, 0);
 
@@ -307,7 +397,7 @@ void Application::create3rdScene()
 	obj = activeScene->duplicateObject(obj);
 	obj->addTranslation(2, -2, 0);
 }
-
+/*
 void Application::create4thScene()
 {
 	Light* light = activeScene->light;
@@ -316,7 +406,7 @@ void Application::create4thScene()
 
 	ShaderProgram* defaultShader = activeScene->shaders[0];
 	defaultShader->addSubject(dynamic_cast<Subject*>(light));
-	auto obj = activeScene->addObject(sphere, sphereSize, defaultShader);
+	auto obj = activeScene->addObject(models["sphere"], defaultShader);
 	obj->addTranslation(2, 0, 0);
 	
 	ShaderProgram* lambertShader = activeScene->shaders[1];
@@ -338,6 +428,7 @@ void Application::create4thScene()
 	obj->addTranslation(2, -2, 0);
 	
 }
+*/
 
 void Application::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
@@ -361,6 +452,12 @@ void Application::key_callback(GLFWwindow* window, int key, int scancode, int ac
 	}
 	if (key == GLFW_KEY_C && action == GLFW_PRESS) {
 		app->changeScene();
+	}
+	if (app->activeScene->skybox)
+	{
+		if (key == GLFW_KEY_V && action == GLFW_PRESS) {
+			app->activeScene->skybox->isAttached = !app->activeScene->skybox->isAttached;
+		}
 	}
 	
 	printf("key_callback [%d,%d,%d,%d] \n", key, scancode, action, mods);

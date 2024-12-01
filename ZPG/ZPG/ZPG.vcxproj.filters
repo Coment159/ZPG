@@ -19,6 +19,9 @@
     <Filter Include="Resource Files\Models">
       <UniqueIdentifier>{295c5e82-847f-404f-8d50-f51d431f328e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{294b6469-24ea-4a86-a9f8-fd842e0f1419}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application.h">
@@ -93,6 +96,24 @@
     <ClInclude Include="IHasFront.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VAOT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="triangleT.h">
+      <Filter>Resource Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="plainT.h">
+      <Filter>Resource Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Sykbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="phong.frag.txt">
@@ -108,6 +129,12 @@
       <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="blinn.frag.txt">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\PhongFragmentShader.glsl">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="Shaders\PhongVertexShader.glsl">
       <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
@@ -166,10 +193,39 @@
     <ClCompile Include="IHasPosition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VAOT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sykbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="phongForest.frag.txt">
       <Filter>Resource Files\Shaders</Filter>
     </Text>
+    <Text Include="textureVertex.txt">
+      <Filter>Resource Files\Shaders</Filter>
+    </Text>
+    <Text Include="textureFragment.txt">
+      <Filter>Resource Files\Shaders</Filter>
+    </Text>
+    <Text Include="Shaders\SkyboxFragment.txt">
+      <Filter>Resource Files\Shaders</Filter>
+    </Text>
+    <Text Include="Shaders\SkyboxVertex.txt">
+      <Filter>Resource Files\Shaders</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\test.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

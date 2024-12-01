@@ -1,10 +1,12 @@
 #ifndef SCENE_H
 #define SCENE_H
 #include <vector>
+#include <unordered_map>
 
 #include "shaderProgram.h"
 #include "drawableObject.h"
 #include "LightAttached.h"
+#include "Sykbox.h"
 
 class Scene
 {
@@ -14,11 +16,11 @@ public:
 
 
 
-	ShaderProgram* createShader(const char* vertFile, const char* fragFile);
+	ShaderProgram* createShader(const char* vertFile, const char* fragFile, const char* name);
 
 
-	DrawableObject* addObject(const float points[], GLuint size,ShaderProgram* shader);
-	DrawableObject* addObject(const float points[], GLuint size);
+	DrawableObject* addObject(Model* model,ShaderProgram* shader);
+	DrawableObject* addObject(Model* model);
 
 	DrawableObject* getObject(int index);
 	DrawableObject* duplicateObject(int index);
@@ -34,12 +36,14 @@ public:
 
 
 	std::vector<DrawableObject*> objects;
-	std::vector<ShaderProgram*> shaders;
+	// unordered map
+	std::unordered_map<std::string, ShaderProgram*> shaders;
 	std::vector<Light*> lights;
 
 	Camera* cam;
 	Light* light = new Light();
-
+	
+	Skybox* skybox;
 
 private:
 

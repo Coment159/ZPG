@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-d:\zpg\1cv\zpg\zpg\x64\debug\vc143.pdb
-d:\zpg\1cv\zpg\zpg\x64\debug\vc143.idb
-d:\zpg\1cv\zpg\zpg\x64\debug\main.obj
-d:\zpg\1cv\zpg\x64\debug\zpg.exe
-d:\zpg\1cv\zpg\x64\debug\zpg.pdb
-d:\zpg\1cv\zpg\zpg\x64\debug\zpg.ilk
-h:\zpg\zpg\zpg\zpg\x64\debug\main.obj
-h:\zpg\zpg\zpg\zpg\x64\debug\observer.obj
-h:\zpg\zpg\zpg\zpg\x64\debug\subject.obj
-h:\zpg\zpg\zpg\zpg\x64\debug\zpg.ilk
-h:\zpg\zpg\zpg\zpg\x64\debug\vc143.idb
-h:\zpg\zpg\zpg\zpg\x64\debug\vc143.pdb
-h:\zpg\zpg\zpg\x64\debug\zpg.pdb
-h:\zpg\zpg\zpg\x64\debug\zpg.exe
-h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\cl.command.1.tlog
-h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\cl.items.tlog
-h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\cl.read.1.tlog
-h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\cl.write.1.tlog
-h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\link.command.1.tlog
-h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\link.read.1.tlog
-h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\link.secondary.1.tlog
-h:\zpg\zpg\zpg\zpg\x64\debug\zpg.tlog\link.write.1.tlog
-=======
 h:\zpggit\zpg\zpg\zpg\x64\debug\vc143.pdb
 h:\zpggit\zpg\zpg\zpg\x64\debug\vc143.idb
 h:\zpggit\zpg\zpg\zpg\x64\debug\vbo.obj
@@ -50,4 +26,3 @@ h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link.command.1.tlog
 h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link.read.1.tlog
 h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link.read.2.tlog
 h:\zpggit\zpg\zpg\zpg\x64\debug\zpg.tlog\link.write.1.tlog
->>>>>>> 1dfd8f4adfa5671e99337f804c7cd629cbbf80f0

@@ -4,20 +4,20 @@
 Scene::Scene(const char* vertFile, const char* fragFile)
 {
 	//defaultShader = shaderProgram->createShader(vertFile, fragFile);
-	shaders.push_back(new ShaderProgram(vertFile, fragFile));
+	shaders["default"] = (new ShaderProgram(vertFile, fragFile));
 	lights.push_back(light);
 }
 
-DrawableObject* Scene::addObject(const float points[],GLuint size , ShaderProgram* shader)
+DrawableObject* Scene::addObject(Model* model, ShaderProgram* shader)
 {
 
-	objects.push_back(new DrawableObject(points, size , shader));
+	objects.push_back(new DrawableObject(model, shader));
 	return objects.at(objects.size() - 1);
 }
 
-DrawableObject* Scene::addObject(const float points[], GLuint size)
+DrawableObject* Scene::addObject(Model* model)
 {
-	objects.push_back(new DrawableObject(points, size ,shaders.at(0)));
+	objects.push_back(new DrawableObject(model, shaders["default"]));
 	return objects.at(objects.size() - 1);;
 }
 
@@ -32,7 +32,7 @@ void Scene::clearObjects()
 
 void Scene::addSubjectToShader(Subject* subject)
 {
-	shaders.at(0)->addSubject(subject);
+	shaders["default"]->addSubject(subject);
 }
 
 void Scene::addSubjectToShader(Subject* subject, ShaderProgram* shader)
@@ -76,11 +76,10 @@ DrawableObject* Scene::duplicateObject(DrawableObject* obj)
 	return objects.at(objects.size() - 1);
 }
 
-ShaderProgram* Scene::createShader(const char* vertFile, const char* fragFile) {
-	int size = shaders.size();
-	shaders.push_back(new ShaderProgram(vertFile, fragFile));
-	shaders.at(size)->addSubject(dynamic_cast<Subject*>(cam));
-	return shaders.at(size);
+ShaderProgram* Scene::createShader(const char* vertFile, const char* fragFile, const char* name) {
+	shaders[name] = (new ShaderProgram(vertFile, fragFile));
+	//shaders.at(size)->addSubject(dynamic_cast<Subject*>(cam));
+	return shaders[name];
 
 
 }
