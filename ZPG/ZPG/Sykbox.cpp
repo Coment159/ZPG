@@ -2,7 +2,7 @@
 
 Skybox::Skybox(GLenum glText, GLuint image, Camera* cam)
 {
-    this->cam = cam;
+    cam->attach(this);
     //Vertex Array Object (VAO)
     VBO = 0;
     glGenBuffers(1, &VBO); // generate the VBO
@@ -37,13 +37,6 @@ void Skybox::createSkybox()
     // Activate shader
     shader->activate();
     shader->setTextureUnit("UISky", textureId);
-
-   
-    if (isAttached)
-    {
-        model = glm::mat4(1.0f);
-        model = glm::translate(model, cam->position);
-    }
    
     //model = glm::translate(model, glm::vec3(0,0,0));
     shader->setModelMatrix(model);
@@ -52,4 +45,14 @@ void Skybox::createSkybox()
     glDrawArrays(GL_TRIANGLES, 0, 108); // Draw the skybox
     glBindVertexArray(0);
 
+}
+
+void Skybox::notify(Subject* sub)
+{
+    Camera* cam = dynamic_cast<Camera*>(sub);
+    if (cam && isAttached)
+    {
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, cam->position);
+    }
 }

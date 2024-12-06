@@ -16,15 +16,15 @@
 #include "triangleT.h"
 #include "plainT.h"
 
+#include <array>
 
 #include<assimp/Importer.hpp>// C++ importerinterface
 #include<assimp/scene.h>// aiSceneoutputdata structure
 #include<assimp/postprocess.h>// Post processingflags
 
 #define GLM_ENABLE_EXPERIMENTAL
-static float lastX = 400;
-static float lastY = 300;
-static bool firstMouse = true;
+
+;
 
 
 class Application
@@ -54,11 +54,17 @@ public:
 	static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 	static void cursor_callback(GLFWwindow* window, double xPos, double yPos);
 	static void window_size_callback(GLFWwindow* window, int width, int height);
-
+	static void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 
 private:
 	GLFWwindow* window = nullptr;
+	bool firstMouse = true;
 
+	float lastX = 400;
+	float lastY = 300;
+	float x = 0, y = 0;
+
+	bool isRightMousePressed = false;
 
 	const char* fragFile = "default.frag.txt";
 	const char* vertFile = "default.vert.txt";
@@ -75,6 +81,17 @@ private:
 	std::unordered_map<std::string, Material*> materials;
 	std::unordered_map<std::string, ShaderProgram*> shaders;
 
+	void changeVisibleState(GLuint index);
+
+	glm::mat4 bezierMatrix = glm::mat4(
+		glm::vec4(-1.0, 3.0, -3.0, 1.0),
+		glm::vec4(3.0, -6.0, 3.0, 0.0),
+		glm::vec4(-3.0, 3.0, 0.0, 0.0),
+		glm::vec4(1.0, 0.0, 0.0, 0.0)
+	);
+
+	glm::vec3 bezierPositions[4];
+	int indexBezier=0;
 };
 
 

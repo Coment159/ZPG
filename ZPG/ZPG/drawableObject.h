@@ -9,13 +9,21 @@ class DrawableObject {
 
 public:
 	//DrawableObject(Model* model, Shader* shader) : model(model), shader(shader
-	DrawableObject(Model* model, ShaderProgram* shader)
-		: model(model), shaderProgram(shader) {}
+	DrawableObject(Model* model, ShaderProgram* shader, GLuint id)
+		: model(model), shaderProgram(shader), id(id) {}
 
-	DrawableObject(const DrawableObject& other)
-		: model(other.model), shaderProgram(other.shaderProgram) {
+	/*
+	DrawableObject(const DrawableObject& other, GLuint id)
+		: model(other.model), shaderProgram(other.shaderProgram), id(id){
 		for (const auto& transform : other.transformations) {
 			transformations.push_back(transform->clone());
+		}
+	}
+	*/
+	DrawableObject(const DrawableObject& other, GLuint id)
+		: model(other.model), shaderProgram(other.shaderProgram), id(id) {
+		for (const auto& transform : other.transformations->transform) {
+			transformations->addTransform(transform->clone());
 		}
 	}
 
@@ -26,7 +34,7 @@ public:
 
 	void addMaterial(Material* material) { this->material = material; }
 
-
+	/*
 	void addTranslation(float x, float y, float z) {
 		transformations.push_back(std::make_unique<Translation>(x, y, z));
 	}
@@ -54,16 +62,25 @@ public:
 			}
 		}
 	}
+	*/
+	bool isActive = true;
+	
 
+	Transform* transformations = new Transform();
+
+	GLuint getID() {return id;}
 
 private:
 	//Transformation data
 	Model* model;
 	ShaderProgram* shaderProgram;
-	std::vector<std::unique_ptr<BasicTransform>> transformations;
+
 	Material* material;
 
+	GLuint id;
 
+	/*
+	std::vector<std::unique_ptr<BasicTransform>> transformations;
 	glm::mat4 getModelMatrix() const {
 		glm::mat4 modelMatrix = glm::mat4(1.0f);
 		for (const auto& transform : transformations) {
@@ -71,7 +88,7 @@ private:
 		}
 		return modelMatrix;
 	}
-
+	*/
 
 };
 #endif // !DRAWABLEOBJECT_H

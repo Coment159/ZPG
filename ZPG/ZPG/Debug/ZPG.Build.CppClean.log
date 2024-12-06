@@ -1,6 +1,6 @@
 h:\zpggit\zpg\zpg\zpg\debug\vc143.pdb
 h:\zpggit\zpg\zpg\zpg\debug\vc143.idb
-h:\zpggit\zpg\zpg\zpg\debug\vao.obj
+h:\zpggit\zpg\zpg\zpg\debug\transformation.obj
 h:\zpggit\zpg\zpg\zpg\debug\texture.obj
 h:\zpggit\zpg\zpg\zpg\debug\sykbox.obj
 h:\zpggit\zpg\zpg\zpg\debug\subject.obj
@@ -20,9 +20,15 @@ h:\zpggit\zpg\zpg\zpg\debug\camera.obj
 h:\zpggit\zpg\zpg\zpg\debug\application.obj
 h:\zpggit\zpg\zpg\zpg\debug\vbo.obj
 h:\zpggit\zpg\zpg\zpg\debug\vaot.obj
+h:\zpggit\zpg\zpg\zpg\debug\vao.obj
+h:\zpggit\zpg\zpg\debug\zpg.pdb
 h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\cl.command.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\cl.items.tlog
 h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\cl.read.1.tlog
 h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\cl.write.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.32588.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.32588.write.1.tlog
 h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.command.1.tlog
 h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.read.1.tlog
+h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.secondary.1.tlog
 h:\zpggit\zpg\zpg\zpg\debug\zpg.tlog\link.write.1.tlog

@@ -5,7 +5,7 @@ Material::Material()
 	diffColor = glm::vec3(1, 1, 1);
 	specColor = glm::vec3(1, 1, 1);
 	ambientColor = glm::vec3(1, 1, 1);
-	shine = 1.f;
+	shine = 32.f;
 	basicTexture = -1;
 }
 

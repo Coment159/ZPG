@@ -11,13 +11,15 @@ Scene::Scene(const char* vertFile, const char* fragFile)
 DrawableObject* Scene::addObject(Model* model, ShaderProgram* shader)
 {
 
-	objects.push_back(new DrawableObject(model, shader));
+	objects.push_back(new DrawableObject(model, shader, newId));
+	newId++;
 	return objects.at(objects.size() - 1);
 }
 
 DrawableObject* Scene::addObject(Model* model)
 {
-	objects.push_back(new DrawableObject(model, shaders["default"]));
+	objects.push_back(new DrawableObject(model, shaders["default"], newId));
+	newId++;
 	return objects.at(objects.size() - 1);;
 }
 
@@ -27,6 +29,7 @@ void Scene::clearObjects()
 		delete(obj);
 	}
 	objects.clear();
+	newId = 0;
 }
 
 
@@ -51,9 +54,15 @@ void Scene::renderScene()
 		light->update();
 	}
 	
-	for (auto i : objects) {
-		i->updateDynamicTransformations();
-		i->drawObject();
+	for (auto& i : objects) {
+		if (i->isActive)
+		{
+			//i->updateDynamicTransformations();
+
+			
+
+			i->drawObject();
+		}
 	}
 
 }
@@ -65,14 +74,15 @@ DrawableObject* Scene::getObject(int index)
 
 DrawableObject* Scene::duplicateObject(int index)
 {
-	objects.push_back(new DrawableObject(*objects.at(index)));
-
+	objects.push_back(new DrawableObject(*objects.at(index), newId));
+	newId++;
 	return objects.at(objects.size()-1);
 }
 
 DrawableObject* Scene::duplicateObject(DrawableObject* obj)
 {
-	objects.push_back(new DrawableObject(*obj));
+	objects.push_back(new DrawableObject(*obj,newId));
+	newId++;
 	return objects.at(objects.size() - 1);
 }
 

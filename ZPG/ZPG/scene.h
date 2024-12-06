@@ -46,7 +46,7 @@ public:
 	Skybox* skybox;
 
 private:
-
+	GLuint newId = 0;
 };
 
 

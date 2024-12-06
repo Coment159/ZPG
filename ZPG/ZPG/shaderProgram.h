@@ -16,6 +16,7 @@ public:
 
 	void setModelMatrix(glm::mat4 M);
 	void activate();
+	void deactivate();
 
 	void setMaterial(Material* material);
 

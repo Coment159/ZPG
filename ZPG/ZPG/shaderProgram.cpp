@@ -40,6 +40,11 @@ void ShaderProgram::activate()
 	glUseProgram(this->shaderProgramID);
 }
 
+void ShaderProgram::deactivate()
+{
+	glUseProgram(0);
+}
+
 void ShaderProgram::setMaterial(Material* material)
 {
 	setVec3("material.diffColor", material->diffColor);
@@ -98,7 +103,7 @@ void ShaderProgram::updateLight(Light* light)
 	id = glGetUniformLocation(shaderProgramID, ("lights[" + std::to_string(index) + "].cutOff").c_str());
 	glUniform1f(id, glm::cos(glm::radians(light->cutOff)));
 
-	std::cout << light->cutOff << std::endl;
+	//std::cout << light->cutOff << std::endl;
 
 	
 }

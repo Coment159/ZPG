@@ -43,7 +43,7 @@ const float skycube[108] = {
     -1.0f, 1.0f, 1.0f,
     1.0f,-1.0f, 1.0f
 };
-class Skybox
+class Skybox : Observer
 {
 public:
 	Skybox(GLenum glText,  GLuint image, Camera* cam);
@@ -52,11 +52,13 @@ public:
 
     bool isAttached = true;
 
+    void notify(Subject* sub) override;
+
 
 private:
     GLuint textureId;
     ShaderProgram* shader;
-    Camera* cam;
+    
     GLuint VAO;
     GLuint VBO;
     glm::mat4 model = glm::mat4(1.0f);

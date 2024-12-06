@@ -3,14 +3,14 @@
 Camera::Camera()
 	:IHasPosition(), IHasFront(),
 	worldUp(glm::vec3(0.0f, 1.0f, 0.0f)),
-	yaw(-90.0f), pitch(0.0f)
+	yaw(90.0f), pitch(0.0f)
 {
-	position = glm::vec3(0.0f, 0.0f, 3.0f);
+	position = glm::vec3(0.0f, 0.0f, 0.0f);
 	front = glm::vec3(0.f, 0.f, -1.f);
 	updateCameraVectors();
 	//viewMatrix = glm::lookAt(glm::vec3(5.0f, 0.0f, 0.0f), glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f));
 	viewMatrix = glm::lookAt(position, position + front, up);
-	projectMatrix = glm::perspective(glm::radians(70.f), 800.f / 600.f, 0.1f, 100.0f);
+	projectMatrix = glm::perspective(glm::radians(90.f), 800.f / 600.f, 0.1f, 100.0f);
 }
 
 

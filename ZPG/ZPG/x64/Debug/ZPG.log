@@ -1,91 +1,57 @@
 ﻿  application.cpp
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(115,47): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(147,12): warning C4244: inicializování: double se převádí na int; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(232,44): warning C4244: argument: size_t se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(259,45): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(269,44): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(292,44): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(346,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(347,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(350,19): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(351,19): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(352,13): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPGgit\ZPG\ZPG\ZPG\application.cpp(353,13): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
   camera.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\model.h(5,9): error C1083: Nejde otevřít soubor zahrnout: assimp/Importer.hpp: No such file or directory
+  (kompilování zdrojového souboru application.cpp)
+  
   drawableObject.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\model.h(5,9): error C1083: Nejde otevřít soubor zahrnout: assimp/Importer.hpp: No such file or directory
+  (kompilování zdrojového souboru drawableObject.cpp)
+  
   drawableObject.h
+H:\ZPGgit\ZPG\ZPG\ZPG\model.h(5,9): error C1083: Nejde otevřít soubor zahrnout: assimp/Importer.hpp: No such file or directory
+  (kompilování zdrojového souboru drawableObject.h)
+  
+  IHasPosition.cpp
   Light.cpp
+  LightAttached.cpp
   main.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\model.h(5,9): error C1083: Nejde otevřít soubor zahrnout: assimp/Importer.hpp: No such file or directory
+  (kompilování zdrojového souboru main.cpp)
+  
+  Material.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\Material.h(8,10): error C1083: Nejde otevřít soubor zahrnout: SOIL.h: No such file or directory
+  (kompilování zdrojového souboru Material.cpp)
+  
   model.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\model.h(5,9): error C1083: Nejde otevřít soubor zahrnout: assimp/Importer.hpp: No such file or directory
+  (kompilování zdrojového souboru model.cpp)
+  
   Observer.cpp
   scene.cpp
-H:\ZPGgit\ZPG\ZPG\ZPG\scene.cpp(76,11): warning C4267: inicializování: Převod z: size_t na: int, může dojít ke ztrátě dat.
+H:\ZPGgit\ZPG\ZPG\ZPG\Material.h(8,10): error C1083: Nejde otevřít soubor zahrnout: SOIL.h: No such file or directory
+  (kompilování zdrojového souboru scene.cpp)
+  
   second.cpp
   ShaderLoader.cpp
 H:\ZPGgit\ZPG\ZPG\ZPG\ShaderLoader.cpp(21,11): warning C4267: inicializování: Převod z: size_t na: int, může dojít ke ztrátě dat.
 H:\ZPGgit\ZPG\ZPG\ZPG\ShaderLoader.cpp(22,11): warning C4267: inicializování: Převod z: size_t na: int, může dojít ke ztrátě dat.
   shaderProgram.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\Material.h(8,10): error C1083: Nejde otevřít soubor zahrnout: SOIL.h: No such file or directory
+  (kompilování zdrojového souboru shaderProgram.cpp)
+  
   shaderProgram.h
+H:\ZPGgit\ZPG\ZPG\ZPG\Material.h(8,10): error C1083: Nejde otevřít soubor zahrnout: SOIL.h: No such file or directory
+  (kompilování zdrojového souboru shaderProgram.h)
+  
   Subject.cpp
+  Sykbox.cpp
+H:\ZPGgit\ZPG\ZPG\ZPG\Material.h(8,10): error C1083: Nejde otevřít soubor zahrnout: SOIL.h: No such file or directory
+  (kompilování zdrojového souboru Sykbox.cpp)
+  
+  Texture.cpp
   VAO.cpp
+  Generování kódu...
+  Kompilování...
+  VAOT.cpp
   VBO.cpp
   Generování kódu...
-H:\ZPGgit\ZPG\ZPG\ZPG\shaderProgram.cpp(107,1): warning C4715: ShaderProgram::findLight: ne všechny cesty k ovládacím prvkům vrací hodnotu
-H:\ZPGgit\ZPG\ZPG\ZPG\Light.h(87,1): warning C4715: Light::getType: ne všechny cesty k ovládacím prvkům vrací hodnotu
-x64\Debug\drawableObject.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
-x64\Debug\shaderProgram.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
-application.obj : error LNK2019: Nerozpoznaný externí symbol __imp_glewInit odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol __imp_glewGetString odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwInit odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwTerminate odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwGetVersion odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwSetErrorCallback odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwCreateWindow odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwDestroyWindow odkazovaný ve funkci "public: void __cdecl Application::run(void)" (?run@Application@@QEAAXXZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwWindowShouldClose odkazovaný ve funkci "public: void __cdecl Application::run(void)" (?run@Application@@QEAAXXZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwSetWindowShouldClose odkazovaný ve funkci "public: static void __cdecl Application::key_callback(struct GLFWwindow *,int,int,int,int)" (?key_callback@Application@@SAXPEAUGLFWwindow@@HHHH@Z)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwGetFramebufferSize odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwSetWindowUserPointer odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwGetWindowUserPointer odkazovaný ve funkci "public: static void __cdecl Application::cursor_callback(struct GLFWwindow *,double,double)" (?cursor_callback@Application@@SAXPEAUGLFWwindow@@NN@Z)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwSetWindowSizeCallback odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwPollEvents odkazovaný ve funkci "public: void __cdecl Application::run(void)" (?run@Application@@QEAAXXZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwSetInputMode odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwSetKeyCallback odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwSetCursorPosCallback odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwGetTime odkazovaný ve funkci "public: void __cdecl Application::run(void)" (?run@Application@@QEAAXXZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwMakeContextCurrent odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwSwapBuffers odkazovaný ve funkci "public: void __cdecl Application::run(void)" (?run@Application@@QEAAXXZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol glfwSwapInterval odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-application.obj : error LNK2019: Nerozpoznaný externí symbol __imp_glewExperimental odkazovaný ve funkci "public: __cdecl Application::Application(void)" (??0Application@@QEAA@XZ)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewAttachShader odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewCompileShader odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewCreateProgram odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewCreateShader odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewDeleteProgram odkazovaný ve funkci "public: void __cdecl ShaderLoader::deleteShader(void)" (?deleteShader@ShaderLoader@@QEAAXXZ)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewDeleteShader odkazovaný ve funkci "public: void __cdecl ShaderLoader::deleteShader(void)" (?deleteShader@ShaderLoader@@QEAAXXZ)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewDetachShader odkazovaný ve funkci "public: void __cdecl ShaderLoader::deleteShader(void)" (?deleteShader@ShaderLoader@@QEAAXXZ)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewGetProgramInfoLog odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewGetProgramiv odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewGetShaderInfoLog odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewGetShaderiv odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewLinkProgram odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewShaderSource odkazovaný ve funkci "public: unsigned int __cdecl ShaderLoader::loadShader(char const *,char const *)" (?loadShader@ShaderLoader@@QEAAIPEBD0@Z)
-ShaderLoader.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewUseProgram odkazovaný ve funkci "public: void __cdecl ShaderLoader::deleteShader(void)" (?deleteShader@ShaderLoader@@QEAAXXZ)
-shaderProgram.obj : error LNK2001: Nerozpoznaný externí symbol __imp___glewUseProgram
-shaderProgram.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewGetUniformLocation odkazovaný ve funkci "public: __cdecl ShaderProgram::ShaderProgram(char const *,char const *)" (??0ShaderProgram@@QEAA@PEBD0@Z)
-shaderProgram.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewUniform1i odkazovaný ve funkci "public: __cdecl ShaderProgram::ShaderProgram(char const *,char const *)" (??0ShaderProgram@@QEAA@PEBD0@Z)
-shaderProgram.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewUniform3f odkazovaný ve funkci "private: void __cdecl ShaderProgram::setVec3(char const *,struct glm::vec<3,float,0>)" (?setVec3@ShaderProgram@@AEAAXPEBDU?$vec@$02M$0A@@glm@@@Z)
-shaderProgram.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewUniform3fv odkazovaný ve funkci "public: void __cdecl ShaderProgram::updateLight(class Light *)" (?updateLight@ShaderProgram@@QEAAXPEAVLight@@@Z)
-shaderProgram.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewUniformMatrix4fv odkazovaný ve funkci "public: __cdecl ShaderProgram::ShaderProgram(char const *,char const *)" (??0ShaderProgram@@QEAA@PEBD0@Z)
-VAO.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewEnableVertexAttribArray odkazovaný ve funkci "public: void __cdecl VAO::LinkVBO(class VBO,unsigned int)" (?LinkVBO@VAO@@QEAAXVVBO@@I@Z)
-VAO.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewVertexAttribPointer odkazovaný ve funkci "public: void __cdecl VAO::LinkVBO(class VBO,unsigned int)" (?LinkVBO@VAO@@QEAAXVVBO@@I@Z)
-VAO.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewBindVertexArray odkazovaný ve funkci "public: void __cdecl VAO::Bind(void)" (?Bind@VAO@@QEAAXXZ)
-VAO.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewDeleteVertexArrays odkazovaný ve funkci "public: void __cdecl VAO::Delete(void)" (?Delete@VAO@@QEAAXXZ)
-VAO.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewGenVertexArrays odkazovaný ve funkci "public: __cdecl VAO::VAO(void)" (??0VAO@@QEAA@XZ)
-VBO.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewBindBuffer odkazovaný ve funkci "public: __cdecl VBO::VBO(float const * const,unsigned int)" (??0VBO@@QEAA@QEBMI@Z)
-VBO.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewBufferData odkazovaný ve funkci "public: __cdecl VBO::VBO(float const * const,unsigned int)" (??0VBO@@QEAA@QEBMI@Z)
-VBO.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewDeleteBuffers odkazovaný ve funkci "public: void __cdecl VBO::Delete(void)" (?Delete@VBO@@QEAAXXZ)
-VBO.obj : error LNK2019: Nerozpoznaný externí symbol __imp___glewGenBuffers odkazovaný ve funkci "public: __cdecl VBO::VBO(float const * const,unsigned int)" (??0VBO@@QEAA@QEBMI@Z)
-..\..\Libs\glew-2.1.0\lib\Release\Win32\glew32.lib : warning LNK4272: Typ počítače knihovny x86 koliduje s typem cílového počítače x64.
-..\..\Libs\glfw-3.4.bin.WIN32\lib-vc2022\glfw3.lib : warning LNK4272: Typ počítače knihovny x86 koliduje s typem cílového počítače x64.
-H:\ZPGgit\ZPG\ZPG\x64\Debug\ZPG.exe : fatal error LNK1120: Počet nerozpoznaných externích typů: 51

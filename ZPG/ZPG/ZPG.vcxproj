@@ -79,6 +79,7 @@
     <ClCompile Include="Subject.cpp" />
     <ClCompile Include="Sykbox.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="transformation.cpp" />
     <ClCompile Include="VAO.cpp" />
     <ClCompile Include="VAOT.cpp" />
     <ClCompile Include="VBO.cpp" />

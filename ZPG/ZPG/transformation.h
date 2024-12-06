@@ -9,6 +9,20 @@
 #include <glm/gtc/type_ptr.hpp> // glm::value_ptr
 #include <memory>
 #include <vector>
+class BasicTransform;
+class Transform {
+public:
+    Transform() {};
+    glm::mat4 getMatrix();
+
+    //void addTransform(BasicTransform* trans);
+    void addTransform(std::unique_ptr<BasicTransform> trans);
+
+    std::vector<std::unique_ptr<BasicTransform>>transform;
+
+};
+
+
 class BasicTransform {
 public:
     virtual ~BasicTransform() = default;
@@ -17,7 +31,10 @@ public:
 
     virtual std::unique_ptr<BasicTransform> clone() const = 0;
 };
-
+class DynamicTransformation : public BasicTransform {
+public:
+    virtual void update() = 0;
+};
 
 class Translation : public BasicTransform {
 public:
@@ -66,7 +83,7 @@ private:
     glm::vec3 scaleVector;
 };
 
-class DynamicTranslation : public BasicTransform {
+class DynamicTranslation : public DynamicTransformation {
 public:
     DynamicTranslation(const glm::vec3& center, float radius, float speed)
         : center(center), radius(radius), speed(speed), angle(0.0f) {}
@@ -82,7 +99,7 @@ public:
         return std::make_unique<DynamicTranslation>(*this);
     }
 
-    void update() {
+    void update() override {
         angle += speed;
     }
 
@@ -93,7 +110,7 @@ private:
     float angle; 
 };
 
-class DynamicRotation : public BasicTransform {
+class DynamicRotation : public DynamicTransformation {
 public:
     DynamicRotation(const glm::vec3 axis, float speed)
         : axis(axis), speed(speed), angle(0.0f) {}
@@ -106,7 +123,7 @@ public:
         return std::make_unique<DynamicRotation>(*this);
     }
 
-    void update() {
+    void update() override{
         angle += speed; 
     }
 
@@ -114,6 +131,41 @@ private:
     glm::vec3 axis;
     float speed;
     float angle;    
+};
+class BezierCurveTransform : public DynamicTransformation {
+public:
+    BezierCurveTransform(const glm::mat4 bezierMatrix, const glm::mat4x3 controlPoints, float speed)
+        : bezierMatrix(bezierMatrix), controlPoints(controlPoints), t(0.0f), delta(speed) {}
+
+    glm::mat4 getMatrix() const override {
+        glm::vec4 parameters = glm::vec4(t * t * t, t * t, t, 1.0f);
+        glm::vec3 position = parameters * bezierMatrix * glm::transpose(controlPoints);
+        return glm::translate(glm::mat4(1.0f), position);
+    }
+
+    std::unique_ptr<BasicTransform> clone() const override {
+        return std::make_unique<BezierCurveTransform>(*this);
+    }
+
+    void update() override {
+        t += delta;
+
+        // Clamp or reverse `t` if it goes out of bounds
+        if (t > 1.0f) {
+            t = 1.0f;
+            delta *= -1; // Reverse direction
+        }
+        else if (t < 0.0f) {
+            t = 0.0f;
+            delta *= -1; // Reverse direction
+        }
+    }
+
+private:
+    glm::mat4 bezierMatrix;
+    glm::mat4x3 controlPoints;
+    float t;
+    float delta;
 };
 /*
 class Transformation {
