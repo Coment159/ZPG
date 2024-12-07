@@ -10,9 +10,9 @@
 #include <memory>
 #include <vector>
 class BasicTransform;
-class Transform {
+class TransformCompozite {
 public:
-    Transform() {};
+    TransformCompozite() {};
     glm::mat4 getMatrix();
 
     //void addTransform(BasicTransform* trans);
@@ -21,8 +21,6 @@ public:
     std::vector<std::unique_ptr<BasicTransform>>transform;
 
 };
-
-
 class BasicTransform {
 public:
     virtual ~BasicTransform() = default;
@@ -167,49 +165,4 @@ private:
     float t;
     float delta;
 };
-/*
-class Transformation {
-public:
-
-    glm::mat4 getModelMatrix() const {
-        glm::mat4 modelMatrix = glm::mat4(1.0f);
-        for (const auto& transform : transformations) {
-            modelMatrix *= transform->getMatrix();
-        }
-        return modelMatrix;
-    }
-private:
-    std::vector<std::unique_ptr<BasicTransform>> transformations;
-};
-*/
-
-
-/*
-class Transformation {
-public:
-    Transformation() : M(glm::mat4(1.0f)) {}
-    Transformation(const Transformation& other) : M(other.M) {}
-
-    glm::mat4 getMatrix() const {
-        return M;
-    }
-
-    void translate(float x, float y, float z) {
-        M = glm::translate(M, glm::vec3(x, y, z));
-    }
-
-    void rotate(float angle, float x, float y, float z) {
-        M = glm::rotate(M, angle, glm::vec3(x, y, z));
-    }
-
-    void scale(float s) {
-        M = glm::scale(M, glm::vec3(s));
-    }
-
-    void reset() { M = glm::mat4(1.0f); }
-
-private:
-    glm::mat4 M; 
-}; 
-*/
 #endif // !TRANSFORMATION_N

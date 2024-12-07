@@ -1,6 +1,6 @@
 #include "transformation.h"
 
-glm::mat4 Transform::getMatrix()
+glm::mat4 TransformCompozite::getMatrix()
 {
 	for (auto& trans : transform) {
 		if (auto dynamic = dynamic_cast<DynamicTransformation*>(trans.get()))
@@ -16,7 +16,7 @@ glm::mat4 Transform::getMatrix()
 }
 
 
-void Transform::addTransform(std::unique_ptr<BasicTransform> trans)
+void TransformCompozite::addTransform(std::unique_ptr<BasicTransform> trans)
 {
 	transform.push_back(std::move(trans));
 }

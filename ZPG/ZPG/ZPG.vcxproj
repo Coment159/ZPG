@@ -70,7 +70,6 @@
     <ClCompile Include="model.cpp" />
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="scene.cpp" />
-    <ClCompile Include="second.cpp" />
     <ClCompile Include="ShaderLoader.cpp" />
     <ClCompile Include="shaderProgram.cpp" />
     <ClCompile Include="shaderProgram.h" />

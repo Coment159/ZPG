@@ -35,6 +35,31 @@ G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56): warning C4244: argument
   	H:\ZPG\ZPG\ZPG\ZPG\application.cpp(269,52):
   	Zobrazit odkaz na kompilované vytváření instancí funkce šablona std::unique_ptr<Translation,std::default_delete<Translation>> std::make_unique<Translation,float&,int,size_t&,0>(float &,int &&,size_t &)
   
+  camera.cpp
+  drawableObject.cpp
+  drawableObject.h
+  IHasPosition.cpp
+  Light.cpp
+  LightAttached.cpp
+  main.cpp
+  Material.cpp
+  model.cpp
+  Observer.cpp
+  scene.cpp
+  ShaderLoader.cpp
+  shaderProgram.cpp
+  shaderProgram.h
+  Subject.cpp
+  Sykbox.cpp
+  transformation.cpp
+  VAO.cpp
+  VAOT.cpp
+  Generování kódu...
+H:\ZPG\ZPG\ZPG\ZPG\shaderProgram.cpp(154,1): warning C4715: ShaderProgram::findLight: ne všechny cesty k ovládacím prvkům vrací hodnotu
+H:\ZPG\ZPG\ZPG\ZPG\Light.h(76,1): warning C4715: Light::getType: ne všechny cesty k ovládacím prvkům vrací hodnotu
+  Kompilování...
+  VBO.cpp
+  Generování kódu...
 Debug\drawableObject.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
 Debug\shaderProgram.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
   SOIL.lib(SOIL.obj) : Našel se modul .net MSIL nebo modul zkompilovaný pomocí /GL. Propojení se restartuje s parametrem /LTCG. Výkon linkeru můžete zlepšit přidáním parametru /LTCG na příkazový řádek propojení.

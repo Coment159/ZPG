@@ -29,7 +29,7 @@ public:
 	bool isActive = true;
 	
 
-	Transform* transformations = new Transform();
+	TransformCompozite* transformations = new TransformCompozite();
 
 	GLuint getID() {return id;}
 

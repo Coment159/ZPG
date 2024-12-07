@@ -1,7 +1,7 @@
 ﻿#include "application.h"
 
 /*
-ZPG Project by TRU0101
+ZPG Project by TRU0101 Truchlý Ondřej
 */
 
 int main(void)
