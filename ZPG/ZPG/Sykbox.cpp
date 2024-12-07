@@ -34,7 +34,18 @@ Skybox::Skybox(GLenum glText, GLuint image, Camera* cam)
 
 void Skybox::setTime(float hour)
 {
+    h = hour;
     time = 0.5f * (1.0f - glm::cos(glm::pi<float>() * hour / 12.0f));
+}
+
+void Skybox::setTimePlus()
+{
+    h++;
+    if (h > 24)
+    {
+        h = 0;
+    }
+    setTime(h);
 }
 
 void Skybox::createSkybox()

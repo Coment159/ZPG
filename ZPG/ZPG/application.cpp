@@ -119,7 +119,7 @@ void Application::createModels()
 	models["login"] = new Model("Models/login.obj");
 	models["house"] = new Model("Models/house.obj");
 	models["zoombi"] = new Model("Models/zombie.obj");
-	//models["car"] = new Model("Models/car.obj",false);
+	models["car"] = new Model("Models/car.obj",false);
 	models["treeObj"] = new Model("Models/tree.obj");
 	
 
@@ -302,12 +302,12 @@ void Application::createForest()
 	house->transformations->addTransform(std::make_unique<Translation>(0, 0, 2));
 	house->transformations->addTransform(std::make_unique<Scaling>(0.1f));
 
-	/*
+	
 	auto car = activeScene->addObject(models["car"]);
 	car->transformations->addTransform(std::make_unique<Translation>(-0.5f, 0, 3.6f));
 	car->transformations->addTransform(std::make_unique<Rotation>(glm::radians(160.f), 0, 1, 0));
 	car->transformations->addTransform(std::make_unique<Scaling>(0.2f));
-	*/
+	
 
 	auto login = activeScene->addObject(models["login"], activeScene->shaders["DEFAULT"]);
 	login->transformations->addTransform(std::make_unique<Translation>(-1.5f, 1, 0));
@@ -407,6 +407,9 @@ void Application::key_callback(GLFWwindow* window, int key, int scancode, int ac
 	{
 		if (key == GLFW_KEY_V && action == GLFW_PRESS) {
 			app->activeScene->skybox->isAttached = !app->activeScene->skybox->isAttached;
+		}
+		if (key == GLFW_KEY_P && action == GLFW_PRESS) {
+			app->activeScene->skybox->setTimePlus();
 		}
 	}
 	

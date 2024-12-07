@@ -5,18 +5,18 @@ H:\ZPG\ZPG\ZPG\ZPG\application.cpp(115,39): warning C4244: argument: const float
 H:\ZPG\ZPG\ZPG\ZPG\application.cpp(117,49): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
 H:\ZPG\ZPG\ZPG\ZPG\application.cpp(210,12): warning C4244: inicializování: double se převádí na int; může dojít ke ztrátě dat.
 H:\ZPG\ZPG\ZPG\ZPG\application.cpp(227,21): warning C4018: >=: signed/unsigned – neshoda
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(433,12): warning C4244: inicializování: float se převádí na int; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(434,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(435,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(436,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(488,11): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(489,11): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(497,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(498,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(502,17): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(503,17): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(504,16): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(505,16): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(436,12): warning C4244: inicializování: float se převádí na int; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(437,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(438,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(439,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(491,11): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(492,11): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(500,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(501,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(505,17): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(506,17): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(507,16): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(508,16): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
 G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56): warning C4244: argument: _Ty se převádí na float; může dojít ke ztrátě dat.
 G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56): warning C4244:         with
 G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56): warning C4244:         [

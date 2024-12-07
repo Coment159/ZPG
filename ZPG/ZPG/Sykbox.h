@@ -48,6 +48,7 @@ class Skybox : Observer
 public:
 	Skybox(GLenum glText,  GLuint image, Camera* cam);
     void setTime(float hour);
+    void setTimePlus();
 	void createSkybox();
 
     bool isAttached = true;
@@ -58,6 +59,7 @@ public:
 private:
     GLuint textureId;
     ShaderProgram* shader;
+    float h = 12;
     float time = 100;
     GLuint VAO;
     GLuint VBO;
