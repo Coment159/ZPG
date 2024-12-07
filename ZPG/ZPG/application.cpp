@@ -22,8 +22,6 @@ Application::Application()
 	glewExperimental = GL_TRUE;
 	glewInit();
 
-	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 
 	glfwSetWindowUserPointer(window, this);
@@ -49,10 +47,6 @@ Application::Application()
 	float ratio = width / (float)height;
 	glViewport(0, 0, width, height);
 
-	//glMatrixMode(GL_PROJECTION);
-	//glLoadIdentity();
-	//glOrtho(-ratio, ratio, -1.f, 1.f, 1.f, -1.f);
-
 	int a;
 	glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, &a);
 	printf("Texture units: %d\n", a);
@@ -75,12 +69,13 @@ void Application::initialize()
 	activeScene->lights.push_back(new Light(0,0,0));
 
 
+
 	//2nd scene
 	scene.push_back(new Scene("default.vert.txt", "phongForest.frag.txt"));
 	Scene* scene2 = scene.at(1);
 	scene2->cam = camera;
 	scene2->addSubjectToShader(dynamic_cast<Subject*>(scene2->cam));
-	scene2->light->lightPosition = glm::vec3(0, 0, 0);
+	scene2->light->lightPosition = glm::vec3(0, -5, 0);
 
 
 	scene2->lights.push_back(new Light(2.0f,0,0.01f));
@@ -101,24 +96,11 @@ void Application::initialize()
 	scene3->addSubjectToShader(dynamic_cast<Subject*>(scene3->cam));
 	scene3->light = new Light(0,0,0);
 	scene3->lights.push_back(new Light(0,0,0));
-
-
-	//4rd scene
-	/*
-	scene.push_back(new Scene("default.vert.txt", "default.frag.txt"));
-	Scene* scene4 = scene.at(3);
-	scene4->addSubjectToShader(dynamic_cast<Subject*>(scene4->cam));
-	*/
 }
 
 void Application::createShaders()
 {
-	/*
-	Scene* sc = scene[3];
-	sc->createShader("default.vert.txt", "lambert.frag.txt");
-	sc->createShader("default.vert.txt", "phong.frag.txt");
-	sc->createShader("default.vert.txt", "blinn.frag.txt");
-	*/
+
 	shaders["textureShader"] = new ShaderProgram("textureVertex.txt", "textureFragment.txt");
 	shaders["default"] = new ShaderProgram("default.vert.txt", "default.frag.txt");
 	shaders["nemec"] = new ShaderProgram("Shaders/PhongVertexShader.glsl", "Shaders/PhongFragmentShader.glsl");
@@ -133,13 +115,11 @@ void Application::createModels()
 	models["sphere"] = new Model(sphere, sphereSize);
 	models["triangleTextured"] = new Model(triangleT, 6, true);
 	models["plainTextured"] = new Model(triangleT, plainSize, true);
-	//models["treeTextured"] = new Model(tree, treeSize, true);
-
 
 	models["login"] = new Model("Models/login.obj");
 	models["house"] = new Model("Models/house.obj");
 	models["zoombi"] = new Model("Models/zombie.obj");
-	models["car"] = new Model("Models/car.obj",false);
+	//models["car"] = new Model("Models/car.obj",false);
 	models["treeObj"] = new Model("Models/tree.obj");
 	
 
@@ -158,6 +138,7 @@ void Application::createModels()
 	activeScene = scene[1];
 	GLuint image = SOIL_load_OGL_cubemap("Textures/posx.jpg", "Textures/negx.jpg", "Textures/posy.jpg", "Textures/negy.jpg", "Textures/posz.jpg", "Textures/negz.jpg", SOIL_LOAD_RGB, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS);
 	activeScene->skybox = new Skybox(GL_TEXTURE5, image, camera);
+	activeScene->skybox->setTime(5);
 	createForest();
 	activeScene = scene[2];
 	create3rdScene();
@@ -321,11 +302,12 @@ void Application::createForest()
 	house->transformations->addTransform(std::make_unique<Translation>(0, 0, 2));
 	house->transformations->addTransform(std::make_unique<Scaling>(0.1f));
 
+	/*
 	auto car = activeScene->addObject(models["car"]);
-
 	car->transformations->addTransform(std::make_unique<Translation>(-0.5f, 0, 3.6f));
 	car->transformations->addTransform(std::make_unique<Rotation>(glm::radians(160.f), 0, 1, 0));
 	car->transformations->addTransform(std::make_unique<Scaling>(0.2f));
+	*/
 
 	auto login = activeScene->addObject(models["login"], activeScene->shaders["DEFAULT"]);
 	login->transformations->addTransform(std::make_unique<Translation>(-1.5f, 1, 0));

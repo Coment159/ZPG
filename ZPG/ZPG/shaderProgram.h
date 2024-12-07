@@ -27,10 +27,11 @@ public:
 	void updateCam(Camera* cam);
 	void updateLight(Light* light);
 	void notify(Subject* sub) override;
+	void setFloat(const char* var, float value);
 
 private:
 	void setVec3(const char* vector, glm::vec3 values);
-	void setFloat(const char* var, float value);
+
 
 	int findLight(Light* light);
 

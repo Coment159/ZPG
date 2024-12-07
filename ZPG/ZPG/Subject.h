@@ -19,11 +19,11 @@ public:
     // Notify all observers
     void notifyAll() {
         for (Observer* observer : observers) {
-            observer->notify(this);  // Call notify on each attached observer
+            observer->notify(this);  
         }
     }
 
 private:
-    std::vector<Observer*> observers;  // List of observers (e.g., shaders)
+    std::vector<Observer*> observers; 
 };
 inline Subject::~Subject() {}

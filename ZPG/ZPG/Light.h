@@ -13,17 +13,6 @@ enum LightType {
 class Light : public Subject
 {
 public:
-	/*
-	Light()
-		:lightPosition(glm::vec3(0, 0, 0)),
-		lightColor(glm::vec3(1, 1, 1)),
-		type(SPOT),
-		radius(2.0f),
-		angle(0.0f),
-		speed(0.01f) {
-		dynamicTranslation = std::make_unique<DynamicTranslation>(lightPosition, radius, speed);
-	}
-	*/
 	
 	Light(
 		LightType type = SPOT, 
@@ -85,9 +74,6 @@ public:
 			break;
 		}
 	}
-
-
-	//glm::vec4 ambient;
 	glm::vec3 lightPosition;
 	glm::vec3 lightColor;
 	glm::vec3 lightDirection;

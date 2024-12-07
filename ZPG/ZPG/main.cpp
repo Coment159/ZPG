@@ -1,8 +1,8 @@
 ﻿#include "application.h"
 
-
-
-//application, shaderprogram id nesmi opustit shaderprogram, drawableobject(model) 
+/*
+ZPG Project by TRU0101
+*/
 
 int main(void)
 {

@@ -32,6 +32,11 @@ Skybox::Skybox(GLenum glText, GLuint image, Camera* cam)
 
 }
 
+void Skybox::setTime(float hour)
+{
+    time = 0.5f * (1.0f - glm::cos(glm::pi<float>() * hour / 12.0f));
+}
+
 void Skybox::createSkybox()
 {
     // Activate shader
@@ -40,7 +45,7 @@ void Skybox::createSkybox()
    
     //model = glm::translate(model, glm::vec3(0,0,0));
     shader->setModelMatrix(model);
-
+    shader->setFloat("time", time);
     glBindVertexArray(VAO); // Bind the skybox VAO
     glDrawArrays(GL_TRIANGLES, 0, 108); // Draw the skybox
     glBindVertexArray(0);

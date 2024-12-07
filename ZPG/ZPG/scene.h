@@ -14,8 +14,6 @@ public:
 	Scene(const char* vertFile, const char* fragFile);
 	void renderScene();
 
-
-
 	ShaderProgram* createShader(const char* vertFile, const char* fragFile, const char* name);
 
 
@@ -30,10 +28,6 @@ public:
 
 	void addSubjectToShader(Subject* subject);
 	void addSubjectToShader(Subject* subject, ShaderProgram* shader);
-
-
-
-
 
 	std::vector<DrawableObject*> objects;
 	// unordered map

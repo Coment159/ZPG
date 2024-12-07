@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application.h" />
-    <ClInclude Include="callbacks.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="IHasFront.h" />
     <ClInclude Include="IHasPosition.h" />
@@ -42,7 +41,6 @@
     <ClInclude Include="ShaderLoader.h" />
     <ClInclude Include="Subject.h" />
     <ClInclude Include="Sykbox.h" />
-    <ClInclude Include="Texture.h" />
     <ClInclude Include="transformation.h" />
     <ClInclude Include="triangle.h" />
     <ClInclude Include="triangleT.h" />
@@ -78,7 +76,6 @@
     <ClCompile Include="shaderProgram.h" />
     <ClCompile Include="Subject.cpp" />
     <ClCompile Include="Sykbox.cpp" />
-    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="transformation.cpp" />
     <ClCompile Include="VAO.cpp" />
     <ClCompile Include="VAOT.cpp" />

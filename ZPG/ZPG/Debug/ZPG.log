@@ -1,22 +1,22 @@
 ﻿  application.cpp
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(131,43): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(132,37): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(133,39): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(135,49): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(229,12): warning C4244: inicializování: double se převádí na int; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(246,21): warning C4018: >=: signed/unsigned – neshoda
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(451,12): warning C4244: inicializování: float se převádí na int; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(452,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(453,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(454,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(506,11): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(507,11): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(515,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(516,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(520,17): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(521,17): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(522,16): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
-H:\ZPG\ZPG\ZPG\ZPG\application.cpp(523,16): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(113,43): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(114,37): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(115,39): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(117,49): warning C4244: argument: const float se převádí na GLuint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(210,12): warning C4244: inicializování: double se převádí na int; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(227,21): warning C4018: >=: signed/unsigned – neshoda
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(433,12): warning C4244: inicializování: float se převádí na int; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(434,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(435,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(436,19): warning C4244: argument: float se převádí na GLint; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(488,11): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(489,11): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(497,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(498,17): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(502,17): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(503,17): warning C4244: inicializování: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(504,16): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
+H:\ZPG\ZPG\ZPG\ZPG\application.cpp(505,16): warning C4244: =: double se převádí na float; může dojít ke ztrátě dat.
 G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56): warning C4244: argument: _Ty se převádí na float; může dojít ke ztrátě dat.
 G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56): warning C4244:         with
 G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56): warning C4244:         [
@@ -25,43 +25,16 @@ G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56): warning C4244:         
   (kompilování zdrojového souboru application.cpp)
   G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56):
   kontext vytváření instancí šablony (první nejstarší) je
-  	H:\ZPG\ZPG\ZPG\ZPG\application.cpp(177,42):
+  	H:\ZPG\ZPG\ZPG\ZPG\application.cpp(158,42):
   	Zobrazit odkaz na kompilované vytváření instancí funkce šablona std::unique_ptr<Translation,std::default_delete<Translation>> std::make_unique<Translation,int,int,int,0>(int &&,int &&,int &&)
   
 G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56): warning C4244: argument: size_t se převádí na float; může dojít ke ztrátě dat.
   (kompilování zdrojového souboru application.cpp)
   G:\VS\VC\Tools\MSVC\14.39.33519\include\memory(3434,56):
   kontext vytváření instancí šablony (první nejstarší) je
-  	H:\ZPG\ZPG\ZPG\ZPG\application.cpp(288,52):
+  	H:\ZPG\ZPG\ZPG\ZPG\application.cpp(269,52):
   	Zobrazit odkaz na kompilované vytváření instancí funkce šablona std::unique_ptr<Translation,std::default_delete<Translation>> std::make_unique<Translation,float&,int,size_t&,0>(float &,int &&,size_t &)
   
-  camera.cpp
-  drawableObject.cpp
-  drawableObject.h
-  IHasPosition.cpp
-  Light.cpp
-  LightAttached.cpp
-  main.cpp
-  Material.cpp
-  model.cpp
-  Observer.cpp
-  scene.cpp
-  second.cpp
-  ShaderLoader.cpp
-  shaderProgram.cpp
-  shaderProgram.h
-  Subject.cpp
-  Sykbox.cpp
-  Texture.cpp
-  transformation.cpp
-  Generování kódu...
-H:\ZPG\ZPG\ZPG\ZPG\shaderProgram.cpp(154,1): warning C4715: ShaderProgram::findLight: ne všechny cesty k ovládacím prvkům vrací hodnotu
-H:\ZPG\ZPG\ZPG\ZPG\Light.h(87,1): warning C4715: Light::getType: ne všechny cesty k ovládacím prvkům vrací hodnotu
-  Kompilování...
-  VAO.cpp
-  VAOT.cpp
-  VBO.cpp
-  Generování kódu...
 Debug\drawableObject.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
 Debug\shaderProgram.obj : warning LNK4042: Objekt je zadaný víckrát. Nadbytečné se ignorují.
   SOIL.lib(SOIL.obj) : Našel se modul .net MSIL nebo modul zkompilovaný pomocí /GL. Propojení se restartuje s parametrem /LTCG. Výkon linkeru můžete zlepšit přidáním parametru /LTCG na příkazový řádek propojení.

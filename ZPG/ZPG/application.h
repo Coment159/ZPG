@@ -23,10 +23,9 @@
 #include<assimp/postprocess.h>// Post processingflags
 
 #define GLM_ENABLE_EXPERIMENTAL
-
 ;
 
-
+// Manages the whole "engine"
 class Application
 {
 public:
